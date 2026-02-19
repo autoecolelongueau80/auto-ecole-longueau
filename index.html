@@ -35,69 +35,6 @@
       display: block;
     }
 
-    /* MENU */
-    nav {
-      background: #111;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      flex-wrap: wrap;
-      transition: max-height 0.3s ease;
-      overflow: hidden;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 0;
-      display: block;
-      position: relative;
-      transition: 0.3s;
-    }
-
-    nav ul li a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #00bfff;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #00bfff;
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-
-    /* BOUTON HAMBURGER */
-    #menu-toggle {
-      display: none;
-      font-size: 2em;
-      color: #fff;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 101;
-    }
-
     /* MAIN */
     main {
       max-width: 1200px;
@@ -127,26 +64,6 @@
       padding-bottom: 5px;
       color: #333;
       font-size: 1.8em;
-    }
-
-    /* BANNIÈRE */
-    .banner {
-      width: 100%;
-      height: 400px;
-      background-image: url("auto-ecole.jpg");
-      background-size: cover;
-      background-position: center;
-      margin: 30px 0;
-      border-radius: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.25);
     }
 
     /* LISTES */
@@ -207,46 +124,18 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .header-image img, .banner {
-        max-height: 350px;
-      }
       h2 {
         font-size: 1.6em;
       }
     }
 
     @media (max-width: 768px) {
-      nav ul li {
-        margin: 8px 10px;
-      }
       h2 {
         font-size: 1.4em;
       }
     }
 
     @media (max-width: 480px) {
-      nav ul {
-        flex-direction: column;
-        max-height: 0;
-      }
-
-      nav ul.show {
-        max-height: 500px;
-      }
-
-      #menu-toggle {
-        display: block;
-      }
-
-      nav ul li {
-        margin: 10px 0;
-        text-align: center;
-      }
-
-      .header-image img, .banner {
-        max-height: 220px;
-      }
-
       h2 {
         font-size: 1.2em;
       }
@@ -273,20 +162,7 @@
     <img src="auto-ecole.jpg" alt="Auto-École de Longueau">
   </header>
 
-  <!-- MENU -->
-  <nav>
-    <span id="menu-toggle">&#9776;</span> <!-- hamburger -->
-    <ul id="menu">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#horaires">Horaires</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#infos">Infos</a></li>
-    </ul>
-  </nav>
-
-  <main id="accueil">
-    <div class="banner"></div>
+  <main>
 
     <section id="horaires">
       <h2>Horaires d'ouverture</h2>
@@ -329,6 +205,7 @@
       <h2>Infos supplémentaires</h2>
       <p>Formations modernes, accompagnement personnalisé et réussite des élèves au cœur de notre engagement.</p>
     </section>
+
   </main>
 
   <footer>
@@ -359,14 +236,6 @@
     const btn = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
       btn.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-
-    // Menu hamburger pour mobile
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-
-    menuToggle.addEventListener("click", () => {
-      menu.classList.toggle("show");
     });
   </script>
 
