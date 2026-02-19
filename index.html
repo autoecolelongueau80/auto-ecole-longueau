@@ -111,7 +111,25 @@
       color: #333;
     }
 
-  
+    /* BANNIÈRE */
+    .banner {
+      width: 100%;
+      height: 450px;
+      background-image: url("html/auto-ecole.jpg");
+      background-size: cover;
+      background-position: center;
+      margin: 40px 0;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
 
     /* LISTES */
     ul {
@@ -196,7 +214,7 @@
 
   <!-- IMAGE EN HAUT -->
   <header class="header-image">
-    <img src="auto-ecole.jpg" alt="Auto-École de Longueau">
+    <img src="html/auto-ecole.jpg" alt="Auto-École de Longueau">
   </header>
 
   <!-- MENU -->
@@ -232,7 +250,6 @@
       <p>Téléphone : 03 22 53 93 60</p>
       <p>Email : contact@autoecole-longueau.fr</p>
       <p>Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
-      <p>Facebook : Auto-école de Longueau</p>
       <div class="social">
         <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
           <i class="fab fa-facebook-square"></i>
