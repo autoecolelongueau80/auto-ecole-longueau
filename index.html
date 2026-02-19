@@ -3,21 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Auto-École de Longueau</title>
+
   <style>
     /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #f8f9fa; color: #000; line-height: 1.6; scroll-behavior: smooth; }
-
-    /* HEADER */
-    header {
-      background: linear-gradient(to right, #000, #1c1c1c);
-      color: #fff;
-      text-align: center;
-      padding: 30px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* MENU FIXE */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #000;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* HEADER IMAGE (REMPLACE LE TEXTE) */
+    .header-image {
+      background: #000;
+      text-align: center;
+    }
+
+    .header-image img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* MENU */
     nav {
       background: #111;
       position: sticky;
@@ -32,7 +48,9 @@
       list-style: none;
     }
 
-    nav ul li { margin: 0 20px; }
+    nav ul li {
+      margin: 0 20px;
+    }
 
     nav ul li a {
       color: #fff;
@@ -40,26 +58,35 @@
       font-weight: bold;
       padding: 15px 0;
       display: block;
-      transition: 0.3s;
       position: relative;
+      transition: 0.3s;
     }
 
     nav ul li a::after {
-      content: '';
+      content: "";
       position: absolute;
+      bottom: 0;
+      left: 0;
       width: 0;
       height: 2px;
       background: #00bfff;
-      left: 0;
-      bottom: 0;
       transition: 0.3s;
     }
 
-    nav ul li a:hover::after { width: 100%; }
-    nav ul li a:hover { color: #00bfff; }
+    nav ul li a:hover {
+      color: #00bfff;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
 
     /* MAIN */
-    main { max-width: 1200px; margin: auto; padding: 40px 20px; }
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
     section {
       margin-bottom: 60px;
@@ -67,6 +94,7 @@
       opacity: 0;
       transform: translateY(40px);
       transition: all 1s ease;
+      scroll-margin-top: 80px;
     }
 
     section.visible {
@@ -83,53 +111,46 @@
       color: #333;
     }
 
-    /* BANNIÈRE */
-    .banner {
-      width: 100%;
-      height: 450px;
-      background-image: url('auto-ecole.jpg');
-      background-size: cover;
-      background-position: center;
-      margin: 40px 0;
-      border-radius: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .banner::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(0,0,0,0.3);
-    }
+  
 
     /* LISTES */
-    ul { list-style: none; padding-left: 0; text-align: center; }
-    li { margin-bottom: 12px; font-size: 1.1em; }
-
-    /* LIENS ICONES */
-    .social a {
-      text-decoration: none;
-      margin: 0 10px;
-      color: #00bfff;
-      font-size: 1.5em;
-      transition: 0.3s;
+    ul {
+      list-style: none;
+      text-align: center;
     }
 
-    .social a:hover { color: #009acd; }
+    li {
+      margin-bottom: 12px;
+      font-size: 1.1em;
+    }
+
+    /* SOCIAL */
+    .social {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .social a {
+      color: #00bfff;
+      font-size: 1.8em;
+      margin: 0 10px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .social a:hover {
+      color: #009acd;
+    }
 
     /* FOOTER */
     footer {
-      text-align: center;
       background: #111;
       color: #fff;
+      text-align: center;
       padding: 20px 0;
     }
 
-    /* BOUTON RETOUR EN HAUT */
+    /* BOUTON HAUT */
     #backToTop {
       position: fixed;
       bottom: 30px;
@@ -141,30 +162,44 @@
       border-radius: 5px;
       cursor: pointer;
       display: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-      transition: 0.3s;
     }
 
-    #backToTop:hover { background: #009acd; }
+    #backToTop:hover {
+      background: #009acd;
+    }
 
     /* RESPONSIVE */
-    @media(max-width:600px){
-      nav ul { flex-direction: column; }
-      nav ul li { margin: 10px 0; }
-      .banner { height: 250px; }
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .banner {
+        height: 250px;
+      }
+
+      .header-image img {
+        max-height: 180px;
+      }
     }
   </style>
-  <!-- FONT AWESOME POUR ICONE FACEBOOK -->
+
+  <!-- ICONE FACEBOOK -->
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Auto-École de Longueau</h1>
+  <!-- IMAGE EN HAUT -->
+  <header class="header-image">
+    <img src="auto-ecole-2.jpg" alt="Auto-École de Longueau">
   </header>
 
-  <!-- MENU FIXE -->
+  <!-- MENU -->
   <nav>
     <ul>
       <li><a href="#accueil">Accueil</a></li>
@@ -175,13 +210,10 @@
     </ul>
   </nav>
 
-  <!-- CONTENU PRINCIPAL -->
   <main id="accueil">
 
-    <!-- BANNIÈRE IMAGE PLEINE LARGEUR -->
     <div class="banner"></div>
 
-    <!-- HORAIRES -->
     <section id="horaires">
       <h2>Horaires d'ouverture</h2>
       <ul>
@@ -195,76 +227,64 @@
       </ul>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Téléphone : 03 22 53 93 60</p>
       <p>Email : contact@autoecole-longueau.fr</p>
       <p>Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
+      <p>Facebook : Auto-école de Longueau</p>
       <div class="social">
-        <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank" title="Facebook">
+        <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
           <i class="fab fa-facebook-square"></i>
         </a>
       </div>
     </section>
 
-    <!-- TARIFS -->
     <section id="tarifs">
       <h2>Tarifs</h2>
       <ul>
-        <li>Code en ligne (Pass Rousseau) : 40 €</li>
-        <li>Code à l’auto‑école : 325 €</li>
-        <li>Permis B – Formule traditionnelle : 1580 €</li>
-        <li>Permis B – Conduite accompagnée (AAC) : 1150 €</li>
-        <li>Permis B boîte automatique : 1000 €</li>
-        <li>Boîte automatique → manuelle (B78) : 470 €</li>
-        <li>Évaluation initiale : 40 €</li>
-        <li>Cours de conduite supplémentaire : 50 €</li>
-        <li>Accompagnement examen supplémentaire : 50 €</li>
+        <li>Code en ligne : 40 €</li>
+        <li>Code à l’auto-école : 325 €</li>
+        <li>Permis B : 1580 €</li>
+        <li>Conduite accompagnée : 1150 €</li>
+        <li>Boîte automatique : 1000 €</li>
+        <li>Passerelle B78 : 470 €</li>
       </ul>
     </section>
 
-    <!-- INFOS SUPPLÉMENTAIRES -->
     <section id="infos">
       <h2>Infos supplémentaires</h2>
-      <p>L’auto‑école propose des formations complètes pour le Code et le permis de conduire.  
-      Les élèves bénéficient de supports pédagogiques modernes et d’une équipe expérimentée.  
-      Des options accélérées et la conduite accompagnée sont disponibles selon le profil de l’élève.</p>
-      <p>Pour plus d’informations et actualités :  
-      <a href="https://auto-ecole.codesrousseau.fr/annuaire-auto-ecoles/longueau/auto-ecole-de-longueau/17843" target="_blank">Site officiel – Codes Rousseau</a></p>
+      <p>Formations modernes, accompagnement personnalisé et réussite des élèves au cœur de notre engagement.</p>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 Auto-École de Longueau</p>
     <div class="social">
-      <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank" title="Facebook">
+      <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
         <i class="fab fa-facebook-square"></i>
       </a>
     </div>
   </footer>
 
-  <!-- BOUTON RETOUR EN HAUT -->
-  <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑ Haut</button>
+  <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</button>
 
   <script>
-    // Animation à l'apparition des sections
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
         }
       });
     }, { threshold: 0.1 });
+
     sections.forEach(section => observer.observe(section));
 
-    // Afficher bouton retour en haut
-    const btnTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btnTop.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    const btn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      btn.style.display = window.scrollY > 300 ? "block" : "none";
     });
   </script>
 
