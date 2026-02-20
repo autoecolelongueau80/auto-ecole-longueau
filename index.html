@@ -6,7 +6,6 @@
   <title>Auto-École de Longueau</title>
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -18,14 +17,6 @@
       background: #f8f9fa;
       color: #000;
       line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    /* HEADER IMAGE */
-    .header-image {
-      background: #000;
-      text-align: center;
-      width: 100%;
     }
 
     .header-image img {
@@ -34,7 +25,6 @@
       display: block;
     }
 
-    /* MAIN */
     main {
       max-width: 1200px;
       margin: auto;
@@ -55,38 +45,22 @@
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       text-align: center;
       border-bottom: 2px solid #00bfff;
       display: inline-block;
       padding-bottom: 5px;
-      color: #333;
       font-size: 1.8em;
     }
 
     ul {
       list-style: none;
-      text-align: center;
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    /* SOCIAL */
-    .social {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .social a {
-      color: #00bfff;
-      font-size: 2em;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    /* FOOTER */
     footer {
       background: #111;
       color: #fff;
@@ -94,7 +68,27 @@
       padding: 20px 0;
     }
 
-    /* BOUTON HAUT */
+    /* ===== CADRE COMMUN (IDENTIQUE AUX FORFAITS) ===== */
+    .cadre-tarifs,
+    .forfaits-ajout {
+      background: #ffffff;
+      border: 2px solid #00bfff;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .cadre-tarifs h3,
+    .forfaits-ajout h3 {
+      text-align: left;
+      margin-bottom: 15px;
+      color: #000;
+    }
+
+    .cadre-tarifs ul,
+    .forfaits-ajout ul {
+      padding-left: 25px;
+    }
+
     #backToTop {
       position: fixed;
       bottom: 30px;
@@ -106,28 +100,6 @@
       border-radius: 5px;
       cursor: pointer;
       display: none;
-    }
-
-    /* AJOUT FORFAITS (SURBRILLANCE ROUGE) */
-    .forfaits-ajout {
-      background: #ffffff;
-      border: 2px solid #00bfff;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
-    .forfaits-ajout h3 {
-      color: rgb(0, 0, 0);
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .forfaits-ajout ul {
-      text-align: left;
-    }
-
-    .forfaits-ajout li {
-      margin-bottom: 15px;
     }
   </style>
 
@@ -142,98 +114,46 @@
 
 <main>
 
-<section id="horaires">
-  <h2>Horaires d'ouverture</h2>
-  <ul>
-    <li>Lundi : 14h00 – 16h00</li>
-    <li>Mardi : 17h30 – 19h30</li>
-    <li>Mercredi : 16h00 – 18h00</li>
-    <li>Jeudi : Fermé</li>
-    <li>Vendredi : 17h30 – 19h30</li>
-    <li>Samedi : 10h00 – 12h00</li>
-    <li>Dimanche : Fermé</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Téléphone : 03 22 53 93 60</p>
-  <p>Email : contact@autoecole-longueau.fr</p>
-  <p>Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
-  <div class="social">
-    <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
-      <i class="fab fa-facebook-square"></i>
-    </a>
-  </div>
-</section>
-
 <section id="tarifs">
-
   <h2>Tarifs</h2>
-<div class="Tarifs permis B, AAC et conduite supervisée">
+
+  <div class="cadre-tarifs">
     <h3>Tarifs permis B, AAC et conduite supervisée</h3>
-
     <ul>
-      <li><strong>Évaluation (hors forfait) :</strong> 40 €   
-      </li>
-
-      <li><strong>Leçon de conduite 1h Permis B (boîte manuelle) :</strong> 50 €
-      </li>
-
-      <li><strong>Leçon de conduite 1h Permis B (boîte automatique) :</strong> 55 €
-       
-      </li>
-
-      <li><strong>Leçon de conduite AAC :</strong> 50 €
-       
-      </li>
-
-      <li><strong>Rendez-vous préalable (boîte manuelle) :</strong> 50 €
-      </li>
-
-      <li><strong>Rendez-vous préalable (boîte automatique) :</strong> 55 €
-      
-      </li>
-
-      <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte automatique) :</strong> 90 €
-      </li>
-
-      <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte manuelle) :</strong> 86 €
-
-      </li>
-    <div class="Enseignement théorique"></div>
-    <h3>Enseignement théorique</h3>
-
-     <li><strong>Test audio visuel collectif :</strong> 15 €
-        
-      </li>
-      <li><strong>Forfait code (6 mois) :</strong> 200 €
-    
-  </li>
-  <div class="Constitution du dossier et présentation à l'examen (Permis B, AAC et conduite supervisée)"></div>    
-  <h3>Constitution du dossier et présentation à l'examen (Permis B, AAC et conduite supervisée)</h3>
-    
-     <li><strong>Test audio visuel collectif :</strong> 15 €
-        
-      </li>
-      <li><strong>Frais administratifs(Constitution du dossier et démarches administratives) :</strong> 80 €
-   <li> Accompagnement pratique de conduite (comprenant toutes les démarches auprès des services administratifs et la présentation du candidat avec un véhicule)</li>
-     <li><strong>Frais d'accompagnement permis B (boîte manuelle) :</strong> 50 €
-      </li>
- <li><strong>Frais d'accompagnement permis B (boîte automatique) :</strong> 55 €
-   <li><strong>Redevance paiement ETG :</strong> 30 €
-
-
-
-
-
+      <li><strong>Évaluation (hors forfait) :</strong> 40 €</li>
+      <li><strong>Leçon de conduite 1h Permis B (boîte manuelle) :</strong> 50 €</li>
+      <li><strong>Leçon de conduite 1h Permis B (boîte automatique) :</strong> 55 €</li>
+      <li><strong>Leçon de conduite AAC :</strong> 50 €</li>
+      <li><strong>Rendez-vous préalable (boîte manuelle) :</strong> 50 €</li>
+      <li><strong>Rendez-vous préalable (boîte automatique) :</strong> 55 €</li>
+      <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte automatique) :</strong> 90 €</li>
+      <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte manuelle) :</strong> 86 €</li>
     </ul>
   </div>
 
-  <!-- NOUVEAUX FORFAITS AJOUTÉS -->
+  <div class="cadre-tarifs">
+    <h3>Enseignement théorique</h3>
+    <ul>
+      <li><strong>Test audio visuel collectif :</strong> 15 €</li>
+      <li><strong>Forfait code (6 mois) :</strong> 200 €</li>
+    </ul>
+  </div>
+
+  <div class="cadre-tarifs">
+    <h3>Constitution du dossier et présentation à l'examen (Permis B, AAC et conduite supervisée)</h3>
+    <ul>
+      <li><strong>Test audio visuel collectif :</strong> 15 €</li>
+      <li><strong>Frais administratifs :</strong> 80 €</li>
+      <li>Accompagnement pratique de conduite (comprenant toutes les démarches auprès des services administratifs et la présentation du candidat avec un véhicule)</li>
+      <li><strong>Frais d'accompagnement permis B (boîte manuelle) :</strong> 50 €</li>
+      <li><strong>Frais d'accompagnement permis B (boîte automatique) :</strong> 55 €</li>
+      <li><strong>Redevance paiement ETG :</strong> 30 €</li>
+    </ul>
+  </div>
+
+  <!-- FORFAITS : CONTENU STRICTEMENT IDENTIQUE -->
   <div class="forfaits-ajout">
     <h3>Forfaits</h3>
-
     <ul>
       <li><strong>Formule théorique :</strong> 325 €
         <br>Frais administratifs – Formation théorique – 1 Code Rousseau + 1 manuel code
@@ -266,15 +186,9 @@
       <li><strong>Permis B boîte manuelle sans code :</strong> 1130 €
         <br>20h leçons pratiques– 1 accompagnement pratique
       </li>
-
     </ul>
   </div>
 
-</section>
-
-<section id="infos">
-  <h2>Infos supplémentaires</h2>
-  <p>Formations modernes, accompagnement personnalisé et réussite des élèves au cœur de notre engagement.</p>
 </section>
 
 </main>
@@ -289,9 +203,7 @@
   const sections = document.querySelectorAll("section");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+      if (entry.isIntersecting) entry.target.classList.add("visible");
     });
   }, { threshold: 0.1 });
 
