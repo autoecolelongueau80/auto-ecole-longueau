@@ -115,27 +115,31 @@
       display: none;
     }
 
-    /* LABEL QUALITÉ */
-    .label-qualite {
-      text-align: right;
-      margin-top: 30px;
-    }
+   
+    /* LABEL QUALITÉ et avis google avec 2 images côte à côte */
+.label-qualite {
+  display: flex;               /* active le mode flex */
+  justify-content: center;     /* centre horizontalement les images */
+  align-items: center;         /* centre verticalement si images de tailles différentes */
+  gap: 20px;                   /* espace entre les images */
+  margin-top: 30px;
+  flex-wrap: wrap;             /* permet aux images de passer à la ligne si besoin */
+}
 
-    .label-qualite img {
-      width: 250px;
-      max-width: auto;
-      height: auto;
-    }
-     /* AVIS GOOGLE */
-    .avis-google {
-      text-align: left;
-      margin-top: 30px;
-    }
+.label-qualite img {
+  width: 250px;                /* taille standard sur grand écran */
+  max-width: 100%;             /* ne dépasse jamais le conteneur */
+  height: auto;
+}
 
-    .avis-google img {
-      max-width: auto;
-      height: auto;
-    }
+/* Sur petits écrans, les images deviennent pleine largeur */
+@media (max-width: 600px) {
+  .label-qualite img {
+    width: 100%;               /* chaque image prend toute la largeur */
+    margin-bottom: 15px;       /* petit espace entre elles */
+  }
+}
+  
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
@@ -240,11 +244,6 @@
 <section id="label-qualite">
   <div class="label-qualite">
     <img src="label-qualite.jpg" alt="École de conduite qualité">
-  </div>
-</section>
-<!-- AJOUT AVIS GOOGLE -->
-<section id="avis-google">
-  <div class="avis-google">
     <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis">
   </div>
 </section>
