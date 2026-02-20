@@ -7,11 +7,7 @@
 
   <style>
     /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
@@ -20,17 +16,9 @@
       line-height: 1.6;
     }
 
-    .header-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    .header-image img { width: 100%; height: auto; display: block; }
 
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+    main { max-width: 1200px; margin: auto; padding: 30px 20px; }
 
     section {
       margin-bottom: 50px;
@@ -40,10 +28,7 @@
       transition: all 1s ease;
     }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible { opacity: 1; transform: translateY(0); }
 
     h2 {
       margin-bottom: 25px;
@@ -54,13 +39,9 @@
       font-size: 1.8em;
     }
 
-    ul {
-      list-style: none;
-    }
+    ul { list-style: none; }
 
-    li {
-      margin-bottom: 12px;
-    }
+    li { margin-bottom: 12px; }
 
     footer {
       background: #111;
@@ -70,36 +51,19 @@
     }
 
     /* CADRES TARIFS */
-    .cadre-tarifs,
-    .forfaits-ajout {
+    .cadre-tarifs, .forfaits-ajout {
       background: #ffffff;
       border: 2px solid #00bfff;
       padding: 20px;
       margin-bottom: 30px;
     }
 
-    .cadre-tarifs h3,
-    .forfaits-ajout h3 {
-      text-align: left;
-      margin-bottom: 15px;
-    }
-
-    .cadre-tarifs ul,
-    .forfaits-ajout ul {
-      padding-left: 25px;
-    }
+    .cadre-tarifs h3, .forfaits-ajout h3 { text-align: left; margin-bottom: 15px; }
+    .cadre-tarifs ul, .forfaits-ajout ul { padding-left: 25px; }
 
     /* SOCIAL */
-    .social {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .social a {
-      color: #00bfff;
-      font-size: 2em;
-      text-decoration: none;
-    }
+    .social { text-align: center; margin-top: 15px; }
+    .social a { color: #00bfff; font-size: 2em; text-decoration: none; }
 
     /* BOUTON HAUT */
     #backToTop {
@@ -124,25 +88,14 @@
       margin-top: 30px;
       flex-wrap: wrap;
     }
-
-    .label-qualite img {
-      width: 250px;
-      max-width: 100%;
-      height: auto;
-    }
+    .label-qualite img { width: 250px; max-width: 100%; height: auto; }
 
     @media (max-width: 600px) {
-      .label-qualite img {
-        width: 100%;
-        margin-bottom: 15px;
-      }
+      .label-qualite img { width: 100%; margin-bottom: 15px; }
     }
 
     /* Lien Facebook toujours noir */
-    .lien-noir,
-    .lien-noir:visited,
-    .lien-noir:hover,
-    .lien-noir:active {
+    .lien-noir, .lien-noir:visited, .lien-noir:hover, .lien-noir:active {
       color: #000;
       text-decoration: none;
     }
@@ -152,7 +105,6 @@
 </head>
 
 <body>
-
 <header class="header-image">
   <img src="auto-ecole.jpg" alt="Auto-École de Longueau">
 </header>
@@ -163,7 +115,7 @@
   <section id="label-qualite">
     <div class="label-qualite">
       <img src="label-qualite.jpg" alt="École de conduite qualité">
-      <img src="permis-1e.jpg" alt="logo permis 1euro">
+      <img src="permis-1e.jpg" alt="Autre logo">
     </div>
   </section>
 
@@ -194,19 +146,16 @@
   <section id="tarifs">
     <h2>Tarifs</h2>
 
-    <!-- FORFAITS (en premier) -->
+    <!-- FORFAITS -->
     <div class="forfaits-ajout">
       <h3>Forfaits</h3>
       <ul>
-        <li><strong>Formule théorique :</strong> 325 €<br>Frais administratifs – Formation théorique – 1 Class Rousseau + 1 manuel code</li>
-        <li><strong>Permis B – Boîte manuelle :</strong> 1280€<br>Frais administratifs – Formation théorique - 20h de cours pratiques – 1 accompagnement pratique</li>
-        <li><strong>Permis B – Boîte manuelle :</strong> 1580€<br>Frais administratifs – Formation théorique - 25h de cours pratiques – 2 accompagnements pratiques</li>
-        <li><strong>Permis B – Boîte automatique :</strong> 1050 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 accompagnement pratique</li>
-        <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €<br>Frais administratifs – Formation théorique - 20h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
-        <li><strong>Permis AAC – Boîte automatique :</strong> 1000 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
-        <li><strong>Permis B auto sans code :</strong> 850 €<br>Frais administratifs - 13h leçons cours pratiques - 1 accompagnement pratique</li>
-        <li><strong>Permis B manuel sans code :</strong> 1130 €<br>Frais administratifs - 20h leçons cours pratiques - 1 accompagnement pratique</li>
-        <li><strong>Formation passerelle :</strong> 470 €<br>Frais administratifs - 7h leçons cours pratiques - 1 évaluation de départ</li>
+        <li><strong>Formule théorique :</strong> 325 €</li>
+        <li><strong>Permis B – Boîte manuelle :</strong> 1280 €</li>
+        <li><strong>Permis B – Boîte manuelle :</strong> 1580 €</li>
+        <li><strong>Permis B – Boîte automatique :</strong> 1050 €</li>
+        <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €</li>
+        <li><strong>Permis AAC – Boîte automatique :</strong> 1000 €</li>
       </ul>
     </div>
 
@@ -238,14 +187,17 @@
         <li><strong>Évaluation (hors forfait) :</strong> 40 €</li>
         <li><strong>Leçon de conduite 1h Permis B (boîte manuelle) :</strong> 50 €</li>
         <li><strong>Leçon de conduite 1h Permis B (boîte automatique) :</strong> 55 €</li>
-        <li><strong>Leçon de conduite AAC :</strong> 50 €</li>
-        <li><strong>Rendez-vous préalable (boîte manuelle) :</strong> 50 €</li>
-        <li><strong>Rendez-vous préalable (boîte automatique) :</strong> 55 €</li>
-        <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte automatique) :</strong> 90 €</li>
-        <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte manuelle) :</strong> 86 €</li>
       </ul>
     </div>
 
+  </section>
+
+  <!-- AFFILIATION -->
+  <section id="affiliation">
+    <h2>Affiliation</h2>
+    <div style="text-align:center; margin-top:20px;">
+      <img src="affiliation.jpg" alt="Affiliation" style="width:250px; height:auto;">
+    </div>
   </section>
 
   <!-- INFOS SUPPLÉMENTAIRES -->
