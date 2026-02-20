@@ -79,8 +79,8 @@
       display: none;
     }
 
-    /* LABEL QUALITÉ et 2 images côte à côte */
-    .label-qualite {
+    /* LOGOS + LABEL + AFFILIATION côte à côte */
+    .logos-affiliation {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -88,10 +88,15 @@
       margin-top: 30px;
       flex-wrap: wrap;
     }
-    .label-qualite img { width: 250px; max-width: 100%; height: auto; }
+
+    .logos-affiliation img {
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+    }
 
     @media (max-width: 600px) {
-      .label-qualite img { width: 100%; margin-bottom: 15px; }
+      .logos-affiliation img { width: 100%; margin-bottom: 15px; }
     }
 
     /* Lien Facebook toujours noir */
@@ -111,11 +116,12 @@
 
 <main>
 
-  <!-- LOGOS LABEL QUALITÉ + AUTRE IMAGE -->
-  <section id="label-qualite">
-    <div class="label-qualite">
+  <!-- LOGOS, LABEL QUALITÉ ET AFFILIATION EN HAUT -->
+  <section id="logos-affiliation">
+    <div class="logos-affiliation">
+      <img src="autre-logo.jpg" alt="Autre logo">
       <img src="label-qualite.jpg" alt="École de conduite qualité">
-      <img src="permis-1e.jpg" alt="Autre logo">
+      <img src="affiliation.jpg" alt="Affiliation">
     </div>
   </section>
 
@@ -198,14 +204,6 @@
       </ul>
     </div>
 
-  </section>
-
-  <!-- AFFILIATION -->
-  <section id="affiliation">
-    <h2>Affiliation</h2>
-    <div style="text-align:center; margin-top:20px;">
-      <img src="affiliation.jpg" alt="Affiliation" style="width:250px; height:auto;">
-    </div>
   </section>
 
   <!-- INFOS SUPPLÉMENTAIRES -->
