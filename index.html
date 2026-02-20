@@ -115,31 +115,37 @@
       display: none;
     }
 
-   
-    /* LABEL QUALITÉ et avis google avec 2 images côte à côte */
-.label-qualite {
-  display: flex;               /* active le mode flex */
-  justify-content: center;     /* centre horizontalement les images */
-  align-items: center;         /* centre verticalement si images de tailles différentes */
-  gap: 20px;                   /* espace entre les images */
-  margin-top: 30px;
-  flex-wrap: wrap;             /* permet aux images de passer à la ligne si besoin */
-}
+    /* LABEL QUALITÉ et 2 images côte à côte */
+    .label-qualite {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
 
-.label-qualite img {
-  width: 250px;                /* taille standard sur grand écran */
-  max-width: 100%;             /* ne dépasse jamais le conteneur */
-  height: auto;
-}
+    .label-qualite img {
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+    }
 
-/* Sur petits écrans, les images deviennent pleine largeur */
-@media (max-width: 600px) {
-  .label-qualite img {
-    width: 100%;               /* chaque image prend toute la largeur */
-    margin-bottom: 15px;       /* petit espace entre elles */
-  }
-}
-  
+    @media (max-width: 600px) {
+      .label-qualite img {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+
+    /* Lien Facebook toujours noir */
+    .lien-noir,
+    .lien-noir:visited,
+    .lien-noir:hover,
+    .lien-noir:active {
+      color: #000;
+      text-decoration: none;
+    }
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
@@ -153,100 +159,108 @@
 
 <main>
 
-<section id="horaires">
-  <h2>Horaires d'ouverture</h2>
-  <ul style="text-align:center;">
-    <li>Lundi : 14h00 – 16h00</li>
-    <li>Mardi : 17h30 – 19h30</li>
-    <li>Mercredi : 16h00 – 18h00</li>
-    <li>Jeudi : Fermé</li>
-    <li>Vendredi : 17h30 – 19h30</li>
-    <li>Samedi : 10h00 – 12h00</li>
-    <li>Dimanche : Fermé</li>
-  </ul>
-</section>
+  <!-- LOGOS LABEL QUALITÉ + AUTRE IMAGE -->
+  <section id="label-qualite">
+    <div class="label-qualite">
+      <img src="label-qualite.jpg" alt="École de conduite qualité">
+      <img src="permis-1e.jpg" alt="logo permis 1euro">
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p style="text-align:center;">Téléphone : 03 22 53 93 60</p>
-  <p style="text-align:center;">Email : autoecolelongueau@free.fr</p>
-  <p style="text-align:center;">Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
-  <p style="text-align:center;">Facebook : <a href="https://www.facebook.com/profile.php?id=100054197694817&locale=fr_FR" class="lien-noir" target="_blank">Auto-École de Longueau</a></p>
-
-  <div class="social">
-    <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
-      <i class="fab fa-facebook-square"></i>
-    </a>
-  </div>
-</section>
-
-<section id="tarifs">
-  <h2>Tarifs</h2>
-
-  <div class="cadre-tarifs">
-    <h3>Tarifs permis B, AAC et conduite supervisée</h3>
-    <ul>
-      <li><strong>Évaluation (hors forfait) :</strong> 40 €</li>
-      <li><strong>Leçon de conduite 1h Permis B (boîte manuelle) :</strong> 50 €</li>
-      <li><strong>Leçon de conduite 1h Permis B (boîte automatique) :</strong> 55 €</li>
-      <li><strong>Leçon de conduite AAC :</strong> 50 €</li>
-      <li><strong>Rendez-vous préalable (boîte manuelle) :</strong> 50 €</li>
-      <li><strong>Rendez-vous préalable (boîte automatique) :</strong> 55 €</li>
-      <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte automatique) :</strong> 90 €</li>
-      <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte manuelle) :</strong> 86 €</li>
+  <!-- HORAIRES D'OUVERTURE -->
+  <section id="horaires">
+    <h2>Horaires d'ouverture</h2>
+    <ul style="text-align:center;">
+      <li>Lundi : 14h00 – 16h00</li>
+      <li>Mardi : 17h30 – 19h30</li>
+      <li>Mercredi : 16h00 – 18h00</li>
+      <li>Jeudi : Fermé</li>
+      <li>Vendredi : 17h30 – 19h30</li>
+      <li>Samedi : 10h00 – 12h00</li>
+      <li>Dimanche : Fermé</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="cadre-tarifs">
-    <h3>Enseignement théorique</h3>
-    <ul>
-      <li><strong>Test audio visuel collectif :</strong> 15 €</li>
-      <li><strong>Forfait code (6 mois) :</strong> 200 €</li>
-    </ul>
-  </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">Téléphone : 03 22 53 93 60</p>
+    <p style="text-align:center;">Email : autoecolelongueau@free.fr</p>
+    <p style="text-align:center;">Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
+    <p style="text-align:center;">Facebook : <a href="https://www.facebook.com/profile.php?id=100054197694817&locale=fr_FR" class="lien-noir" target="_blank">Auto-École de Longueau</a></p>
+  </section>
 
-  <div class="cadre-tarifs">
-    <h3>Constitution du dossier et présentation à l'examen</h3>
-    <ul>
-      <li><strong>Frais administratifs :</strong> 80 €</li>
-      <li>Accompagnement pratique de conduite avec véhicule : </li>
-      <li><strong>Frais d'accompagnement permis B (boîte manuelle) :</strong> 50 €</li>
-      <li><strong>Frais d'accompagnement permis B (boîte automatique) :</strong> 55 €</li>
-      <li><strong>Redevance paiement ETG :</strong> 30 €</li>
-    </ul>
-  </div>
+  <!-- TARIFS -->
+  <section id="tarifs">
+    <h2>Tarifs</h2>
 
-  <div class="forfaits-ajout">
-    <h3>Forfaits</h3>
-    <ul>
-      <li><strong>Formule théorique :</strong> 325 €<br>Frais administratifs – Formation théorique – 1 Class Rousseau + 1 manuel code</li>
-      <li><strong>Permis B – Boîte manuelle :</strong> 1280 €<br>Frais administratifs – Formation théorique - 20h de cours pratiques – 1 accompagnement pratique (passage permis)</li>
-      <li><strong>Permis B – Boîte manuelle :</strong> 1580 €<br>Frais administratifs – Formation théorique - 25h de cours pratiques – 2 accompagnements pratiques (passage permis)</li>
-      <li><strong>Permis B – Boîte automatique :</strong> 1050 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 accompagnement pratique</li>
-      <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €<br>Frais administratifs – Formation théorique - 20h leçons cours pratiques  – 1 Rendez-vous préalable (2h)</li>
-      <li><strong>Permis AAC – Boîte automatique :</strong> 1000 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques  – 1 Rendez-vous préalable (2h)</li>
-      <li><strong>Permis B auto sans code :</strong> 850 €<br>Frais administratifs - 13h leçons cours pratiques - 1 accompagnement pratique</li>
-      <li><strong>Permis B manuel sans code :</strong> 1130 €<br>Frais administratifs - 20h leçons cours pratiques - 1 accompagnement pratique</li>
-      <li><strong>Formation passerelle :</strong> 470 €<br>Frais administratifs - 7h leçons cours pratiques - 1 évaluation de départ</li>
-    </ul>
-  </div>
+    <!-- FORFAITS (en premier) -->
+    <div class="forfaits-ajout">
+      <h3>Forfaits</h3>
+      <ul>
+        <li><strong>Formule théorique :</strong> 325 €<br>Frais administratifs – Formation théorique – 1 Class Rousseau + 1 manuel code</li>
+        <li><strong>Permis B – Boîte manuelle :</strong> 1280 €<br>Frais administratifs – Formation théorique - 20h de cours pratiques – 1 accompagnement pratique</li>
+        <li><strong>Permis B – Boîte manuelle :</strong> 1580 €<br>Frais administratifs – Formation théorique - 25h de cours pratiques – 2 accompagnements pratiques</li>
+        <li><strong>Permis B – Boîte automatique :</strong> 1050 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 accompagnement pratique</li>
+        <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €<br>Frais administratifs – Formation théorique - 20h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
+        <li><strong>Permis AAC – Boîte automatique :</strong> 1000 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
+        <li><strong>Permis B auto sans code :</strong> 850 €<br>Frais administratifs - 13h leçons cours pratiques - 1 accompagnement pratique</li>
+        <li><strong>Permis B manuel sans code :</strong> 1130 €<br>Frais administratifs - 20h leçons cours pratiques - 1 accompagnement pratique</li>
+        <li><strong>Formation passerelle :</strong> 470 €<br>Frais administratifs - 7h leçons cours pratiques - 1 évaluation de départ</li>
+      </ul>
+    </div>
 
-</section>
+    <!-- ENSEIGNEMENT THEORIQUE -->
+    <div class="cadre-tarifs">
+      <h3>Enseignement théorique</h3>
+      <ul>
+        <li><strong>Test audio visuel collectif :</strong> 15 €</li>
+        <li><strong>Forfait code (6 mois) :</strong> 200 €</li>
+      </ul>
+    </div>
 
-<section id="infos">
-  <h2>Infos supplémentaires</h2>
-  <p style="text-align:center;">
-    Grâce à l’expérience approfondie de nos monitrices, nous offrons à chaque élève un accompagnement personnalisé et des formations modernes, afin de favoriser pleinement leur progression et assurer leur réussite.
-  </p>
-</section>
+    <!-- CONSTITUTION DU DOSSIER -->
+    <div class="cadre-tarifs">
+      <h3>Constitution du dossier et présentation à l'examen</h3>
+      <ul>
+        <li><strong>Frais administratifs :</strong> 80 €</li>
+        <li>Accompagnement pratique de conduite avec véhicule :</li>
+        <li><strong>Frais d'accompagnement permis B (boîte manuelle) :</strong> 50 €</li>
+        <li><strong>Frais d'accompagnement permis B (boîte automatique) :</strong> 55 €</li>
+        <li><strong>Redevance paiement ETG :</strong> 30 €</li>
+      </ul>
+    </div>
 
-<!-- AJOUT DU LABEL QUALITÉ -->
-<section id="label-qualite">
-  <div class="label-qualite">
-    <img src="label-qualite.jpg" alt="École de conduite qualité">
-    <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis">
-  </div>
-</section>
+    <!-- TARIFS UNITAIRES -->
+    <div class="cadre-tarifs">
+      <h3>Tarifs permis B, AAC et conduite supervisée</h3>
+      <ul>
+        <li><strong>Évaluation (hors forfait) :</strong> 40 €</li>
+        <li><strong>Leçon de conduite 1h Permis B (boîte manuelle) :</strong> 50 €</li>
+        <li><strong>Leçon de conduite 1h Permis B (boîte automatique) :</strong> 55 €</li>
+        <li><strong>Leçon de conduite AAC :</strong> 50 €</li>
+        <li><strong>Rendez-vous préalable (boîte manuelle) :</strong> 50 €</li>
+        <li><strong>Rendez-vous préalable (boîte automatique) :</strong> 55 €</li>
+        <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte automatique) :</strong> 90 €</li>
+        <li><strong>Rendez-vous pédagogiques théorique et pratique (boîte manuelle) :</strong> 86 €</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- INFOS SUPPLÉMENTAIRES -->
+  <section id="infos">
+    <h2>Infos supplémentaires</h2>
+    <p style="text-align:center;">
+      Grâce à l’expérience approfondie de nos monitrices, nous offrons à chaque élève un accompagnement personnalisé et des formations modernes, afin de favoriser pleinement leur progression et assurer leur réussite.
+    </p>
+  </section>
+
+  <!-- AVIS GOOGLE -->
+  <section id="avis-google" style="text-align:center; margin-bottom:50px;">
+    <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis" style="width:250px; height:auto;">
+  </section>
+
 </main>
 
 <footer>
