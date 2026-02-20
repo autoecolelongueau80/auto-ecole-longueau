@@ -68,7 +68,7 @@
       padding: 20px 0;
     }
 
-    /* ===== CADRE COMMUN (IDENTIQUE AUX FORFAITS) ===== */
+    /* CADRES TARIFS */
     .cadre-tarifs,
     .forfaits-ajout {
       background: #ffffff;
@@ -81,12 +81,23 @@
     .forfaits-ajout h3 {
       text-align: left;
       margin-bottom: 15px;
-      color: #000;
     }
 
     .cadre-tarifs ul,
     .forfaits-ajout ul {
       padding-left: 25px;
+    }
+
+    /* SOCIAL */
+    .social {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .social a {
+      color: #00bfff;
+      font-size: 2em;
+      text-decoration: none;
     }
 
     #backToTop {
@@ -114,6 +125,35 @@
 
 <main>
 
+<!-- HORAIRES -->
+<section id="horaires">
+  <h2>Horaires d'ouverture</h2>
+  <ul style="text-align:center;">
+    <li>Lundi : 14h00 – 16h00</li>
+    <li>Mardi : 17h30 – 19h30</li>
+    <li>Mercredi : 16h00 – 18h00</li>
+    <li>Jeudi : Fermé</li>
+    <li>Vendredi : 17h30 – 19h30</li>
+    <li>Samedi : 10h00 – 12h00</li>
+    <li>Dimanche : Fermé</li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center;">Téléphone : 03 22 53 93 60</p>
+  <p style="text-align:center;">Email : contact@autoecole-longueau.fr</p>
+  <p style="text-align:center;">Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
+
+  <div class="social">
+    <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
+      <i class="fab fa-facebook-square"></i>
+    </a>
+  </div>
+</section>
+
+<!-- TARIFS -->
 <section id="tarifs">
   <h2>Tarifs</h2>
 
@@ -140,55 +180,39 @@
   </div>
 
   <div class="cadre-tarifs">
-    <h3>Constitution du dossier et présentation à l'examen (Permis B, AAC et conduite supervisée)</h3>
+    <h3>Constitution du dossier et présentation à l'examen</h3>
     <ul>
       <li><strong>Test audio visuel collectif :</strong> 15 €</li>
       <li><strong>Frais administratifs :</strong> 80 €</li>
-      <li>Accompagnement pratique de conduite (comprenant toutes les démarches auprès des services administratifs et la présentation du candidat avec un véhicule)</li>
+      <li>Accompagnement pratique de conduite avec véhicule</li>
       <li><strong>Frais d'accompagnement permis B (boîte manuelle) :</strong> 50 €</li>
       <li><strong>Frais d'accompagnement permis B (boîte automatique) :</strong> 55 €</li>
       <li><strong>Redevance paiement ETG :</strong> 30 €</li>
     </ul>
   </div>
 
-  <!-- FORFAITS : CONTENU STRICTEMENT IDENTIQUE -->
   <div class="forfaits-ajout">
     <h3>Forfaits</h3>
     <ul>
-      <li><strong>Formule théorique :</strong> 325 €
-        <br>Frais administratifs – Formation théorique – 1 Code Rousseau + 1 manuel code
-      </li>
-
-      <li><strong>Permis B – Boîte manuelle :</strong> 1280 €
-        <br>Frais administratifs – Formation théorique - 20h de conduite – 1 accompagnement pratique (passage permis)
-      </li>
-
-      <li><strong>Permis B – Boîte manuelle :</strong> 1580 €
-        <br>Frais administratifs – Formation théorique - 25h de conduite – 2 accompagnements pratiques (passages permis)
-      </li>
-
-      <li><strong>Permis B – Boîte automatique (B78) :</strong> 1050 €
-        <br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 accompagnement pratique
-      </li>
-
-      <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €
-        <br>Frais administratifs – Formation théorique - 20h leçons cours pratiques – 1 RDV préalable (2h)
-      </li>
-
-      <li><strong>Permis AAC – Boîte automatique (B78):</strong> 1000 €
-        <br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 RDV préalable (2h)
-      </li>
-
-      <li><strong>Permis B boîte automatique sans code boîte automatique (B78):</strong> 850 €
-        <br>Frais administratifs – 13h leçons cours pratiques – 1 accompagnement pratique
-      </li>
-
-      <li><strong>Permis B boîte manuelle sans code :</strong> 1130 €
-        <br>20h leçons pratiques– 1 accompagnement pratique
-      </li>
+      <li><strong>Formule théorique :</strong> 325 €<br>Frais administratifs – Formation théorique – Code Rousseau + manuel</li>
+      <li><strong>Permis B – Boîte manuelle :</strong> 1280 €<br>20h conduite – 1 accompagnement pratique</li>
+      <li><strong>Permis B – Boîte manuelle :</strong> 1580 €<br>25h conduite – 2 accompagnements pratiques</li>
+      <li><strong>Permis B – Boîte automatique :</strong> 1050 €<br>13h conduite – 1 accompagnement</li>
+      <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €<br>20h conduite – RDV préalable</li>
+      <li><strong>Permis AAC – Boîte automatique :</strong> 1000 €<br>13h conduite – RDV préalable</li>
+      <li><strong>Permis B auto sans code :</strong> 850 €<br>13h conduite</li>
+      <li><strong>Permis B manuel sans code :</strong> 1130 €<br>20h conduite</li>
     </ul>
   </div>
 
+</section>
+
+<!-- INFOS -->
+<section id="infos">
+  <h2>Infos supplémentaires</h2>
+  <p style="text-align:center;">
+    Formations modernes, accompagnement personnalisé et réussite des élèves au cœur de notre engagement.
+  </p>
 </section>
 
 </main>
