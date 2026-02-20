@@ -30,8 +30,7 @@
 
     .header-image img {
       width: 100%;
-      height: auto;      /* garde les proportions */
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
@@ -48,7 +47,6 @@
       opacity: 0;
       transform: translateY(40px);
       transition: all 1s ease;
-      scroll-margin-top: 80px;
     }
 
     section.visible {
@@ -66,15 +64,13 @@
       font-size: 1.8em;
     }
 
-    /* LISTES */
     ul {
       list-style: none;
       text-align: center;
     }
 
     li {
-      margin-bottom: 12px;
-      font-size: 1.1em;
+      margin-bottom: 10px;
     }
 
     /* SOCIAL */
@@ -87,12 +83,7 @@
       color: #00bfff;
       font-size: 2em;
       margin: 0 10px;
-      transition: 0.3s;
       text-decoration: none;
-    }
-
-    .social a:hover {
-      color: #009acd;
     }
 
     /* FOOTER */
@@ -115,129 +106,153 @@
       border-radius: 5px;
       cursor: pointer;
       display: none;
-      z-index: 999;
     }
 
-    #backToTop:hover {
-      background: #009acd;
+    /* AJOUT FORFAITS (SURBRILLANCE ROUGE) */
+    .forfaits-ajout {
+      background: #ffe5e5;
+      border: 2px solid red;
+      padding: 20px;
+      margin-top: 30px;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      h2 {
-        font-size: 1.6em;
-      }
+    .forfaits-ajout h3 {
+      color: red;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    @media (max-width: 768px) {
-      h2 {
-        font-size: 1.4em;
-      }
+    .forfaits-ajout ul {
+      text-align: left;
     }
 
-    @media (max-width: 480px) {
-      h2 {
-        font-size: 1.2em;
-      }
-
-      li {
-        font-size: 1em;
-      }
-
-      #backToTop {
-        padding: 10px 12px;
-        font-size: 0.9em;
-      }
+    .forfaits-ajout li {
+      margin-bottom: 15px;
     }
   </style>
 
-  <!-- ICONE FACEBOOK -->
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-  <!-- IMAGE EN HAUT -->
-  <header class="header-image">
-    <img src="auto-ecole.jpg" alt="Auto-École de Longueau">
-  </header>
+<header class="header-image">
+  <img src="auto-ecole.jpg" alt="Auto-École de Longueau">
+</header>
 
-  <main>
+<main>
 
-    <section id="horaires">
-      <h2>Horaires d'ouverture</h2>
-      <ul>
-        <li>Lundi : 14h00 – 19h00</li>
-        <li>Mardi : 14h00 – 18h00</li>
-        <li>Mercredi : 14h00 – 19h00</li>
-        <li>Jeudi : Fermé</li>
-        <li>Vendredi : 14h00 – 18h00</li>
-        <li>Samedi : 10h00 – 12h00</li>
-        <li>Dimanche : Fermé</li>
-      </ul>
-    </section>
+<section id="horaires">
+  <h2>Horaires d'ouverture</h2>
+  <ul>
+    <li>Lundi : 14h00 – 16h00</li>
+    <li>Mardi : 17h30 – 19h30</li>
+    <li>Mercredi : 16h00 – 18h00</li>
+    <li>Jeudi : Fermé</li>
+    <li>Vendredi : 17h30 – 19h30</li>
+    <li>Samedi : 10h00 – 12h00</li>
+    <li>Dimanche : Fermé</li>
+  </ul>
+</section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Téléphone : 03 22 53 93 60</p>
-      <p>Email : contact@autoecole-longueau.fr</p>
-      <p>Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
-      <div class="social">
-        <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
-          <i class="fab fa-facebook-square"></i>
-        </a>
-      </div>
-    </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Téléphone : 03 22 53 93 60</p>
+  <p>Email : contact@autoecole-longueau.fr</p>
+  <p>Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
+  <div class="social">
+    <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
+      <i class="fab fa-facebook-square"></i>
+    </a>
+  </div>
+</section>
 
-    <section id="tarifs">
-      <h2>Tarifs</h2>
-      <ul>
-        <li>Code en ligne : 40 €</li>
-        <li>Code à l’auto-école : 325 €</li>
-        <li>Permis B : 1580 €</li>
-        <li>Conduite accompagnée : 1150 €</li>
-        <li>Boîte automatique : 1000 €</li>
-        <li>Passerelle B78 : 470 €</li>
-      </ul>
-    </section>
+<section id="tarifs">
+  <h2>Tarifs</h2>
 
-    <section id="infos">
-      <h2>Infos supplémentaires</h2>
-      <p>Formations modernes, accompagnement personnalisé et réussite des élèves au cœur de notre engagement.</p>
-    </section>
+  <ul>
+    <li>Évaluation (hors forfait) : 40 €</li>
+    <li>Leçon de conduite 1h (boîte manuelle) : 50 €</li>
+    <li>Leçon de conduite 1h (boîte automatique) : 55 €</li>
+  </ul>
 
-  </main>
+  <!-- NOUVEAUX FORFAITS AJOUTÉS -->
+  <div class="forfaits-ajout">
+    <h3>Forfaits (nouveauté)</h3>
 
-  <footer>
-    <p>&copy; 2026 Auto-École de Longueau</p>
-    <div class="social">
-      <a href="https://www.facebook.com/AutoEcoleDeLongueau" target="_blank">
-        <i class="fab fa-facebook-square"></i>
-      </a>
-    </div>
-  </footer>
+    <p><strong>Évaluation de départ (hors formule) :</strong> 40 €</p>
 
-  <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</button>
+    <ul>
+      <li><strong>Formule théorique :</strong> 325 €
+        <br>Frais administratifs – Formation théorique – Code Rousseau + manuel
+      </li>
 
-  <script>
-    // Animation des sections
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.1 });
+      <li><strong>Permis B – Boîte manuelle :</strong> 1280 €
+        <br>20h de conduite – 1 accompagnement pratique
+      </li>
 
-    sections.forEach(section => observer.observe(section));
+      <li><strong>Permis B – Boîte manuelle :</strong> 1580 €
+        <br>25h de conduite – 2 accompagnements pratiques
+      </li>
 
-    // Bouton retour en haut
-    const btn = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      btn.style.display = window.scrollY > 300 ? "block" : "none";
+      <li><strong>Permis B – Boîte automatique (B78) :</strong> 1050 €
+        <br>13h de conduite – 1 accompagnement
+      </li>
+
+      <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €
+        <br>20h – RDV préalable (2h)
+      </li>
+
+      <li><strong>Permis AAC – Boîte automatique :</strong> 1000 €
+        <br>13h – RDV préalable (2h)
+      </li>
+
+      <li><strong>Permis B auto sans code :</strong> 850 €
+        <br>13h – 1 accompagnement
+      </li>
+
+      <li><strong>Permis B manuel sans code :</strong> 1130 €
+        <br>20h – 1 accompagnement
+      </li>
+
+      <li><strong>Passerelle B78 vers B :</strong> 470 €
+        <br>7h de conduite
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<section id="infos">
+  <h2>Infos supplémentaires</h2>
+  <p>Formations modernes, accompagnement personnalisé et réussite des élèves au cœur de notre engagement.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Auto-École de Longueau</p>
+</footer>
+
+<button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</button>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
     });
-  </script>
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+
+  const btn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+</script>
 
 </body>
 </html>
