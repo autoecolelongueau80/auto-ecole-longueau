@@ -6,6 +6,7 @@
   <title>Auto-École de Longueau</title>
 
   <style>
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -100,6 +101,7 @@
       text-decoration: none;
     }
 
+    /* BOUTON HAUT */
     #backToTop {
       position: fixed;
       bottom: 30px;
@@ -111,6 +113,18 @@
       border-radius: 5px;
       cursor: pointer;
       display: none;
+    }
+
+    /* LABEL QUALITÉ */
+    .label-qualite {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .label-qualite img {
+      width: 180px;
+      max-width: 90%;
+      height: auto;
     }
   </style>
 
@@ -125,7 +139,6 @@
 
 <main>
 
-<!-- HORAIRES -->
 <section id="horaires">
   <h2>Horaires d'ouverture</h2>
   <ul style="text-align:center;">
@@ -139,7 +152,6 @@
   </ul>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <p style="text-align:center;">Téléphone : 03 22 53 93 60</p>
@@ -153,7 +165,6 @@
   </div>
 </section>
 
-<!-- TARIFS -->
 <section id="tarifs">
   <h2>Tarifs</h2>
 
@@ -207,12 +218,18 @@
 
 </section>
 
-<!-- INFOS -->
 <section id="infos">
   <h2>Infos supplémentaires</h2>
   <p style="text-align:center;">
     Formations modernes, accompagnement personnalisé et réussite des élèves au cœur de notre engagement.
   </p>
+</section>
+
+<!-- AJOUT DU LABEL QUALITÉ -->
+<section id="label-qualite">
+  <div class="label-qualite">
+    <img src="label-qualite.png" alt="École de conduite qualité">
+  </div>
 </section>
 
 </main>
