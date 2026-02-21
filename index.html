@@ -10,6 +10,9 @@
   <link rel="icon" href="favicon.png" type="image/png">
 
   <style>
+    html {
+  scroll-behavior: smooth;
+}
     /* RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -237,7 +240,7 @@
     <p style="text-align:center;">Téléphone portable : 06 07 57 75 33</p>
     <p style="text-align:center;">Email : autoecolelongueau@free.fr</p>
     <p style="text-align:center;">Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
-    <p style="text-align:center;">Facebook : <a href="https://www.facebook.com/profile.php?id=100054197694817&locale=fr_FR" class="lien-noir" target="_blank">Auto-École de Longueau</a></p>
+    <p style="text-align:center;">Facebook : <a href="https://www.facebook.com/profile.php?id=100054197694817&locale=fr_FR" style="color:#00bfff; text-decoration:underline;" target="_blank">Auto-École de Longueau</a></p>
   </section>
 
   <!-- TARIFS -->
@@ -251,10 +254,10 @@
         <li><strong>Permis B – Boîte manuelle :</strong> 1280 €<br>Frais administratifs – Formation théorique - 20h de cours pratiques – 1 accompagnement pratique (passage permis)</li>
         <li><strong>Permis B – Boîte manuelle :</strong> 1580 €<br>Frais administratifs – Formation théorique - 25h de cours pratiques – 2 accompagnements pratiques (passage permis)</li>
         <li><strong>Permis B – Boîte automatique :</strong> 1050 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 accompagnement pratique</li>
-        <li><strong>Permis AAC – Boîte manuelle :</strong> 1150 €<br>Frais administratifs – Formation théorique - 20h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
-        <li><strong>Permis AAC – Boîte automatique :</strong> 1000 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
-        <li><strong>Permis B auto sans code :</strong> 850 €<br>Frais administratifs - 13h leçons cours pratiques - 1 accompagnement pratique</li>
-        <li><strong>Permis B manuel sans code :</strong> 1130 €<br>Frais administratifs - 20h leçons cours pratiques - 1 accompagnement pratique</li>
+        <li><strong>Permis AAC (apprentissage anticipé de la conduite/ dès 15 ans) – Boîte manuelle :</strong> 1150 €<br>Frais administratifs – Formation théorique - 20h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
+        <li><strong>Permis AAC (apprentissage anticipé de la conduite/ dès 15 ans) – Boîte automatique :</strong> 1000 €<br>Frais administratifs – Formation théorique - 13h leçons cours pratiques – 1 Rendez-vous préalable (2h)</li>
+        <li><strong>Permis B - Boîte automatique sans code :</strong> 850 €<br>Frais administratifs - 13h leçons cours pratiques - 1 accompagnement pratique</li>
+        <li><strong>Permis B - Boîte manuelle sans code :</strong> 1130 €<br>Frais administratifs - 20h leçons cours pratiques - 1 accompagnement pratique</li>
         <li><strong>Formation passerelle :</strong> 470 €<br>Frais administratifs - 7h leçons cours pratiques - 1 évaluation de départ</li>
       </ul>
     </div>
@@ -332,7 +335,66 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
   <section id="avis-google" style="text-align:center; margin-bottom:50px;">
     <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis" style="width:250px; height:auto;">
   </section>
+<!-- PRISE DE RENDEZ-VOUS -->
+<section id="rendez-vous">
+  <h2>Prise de rendez-vous</h2>
 
+  <p style="text-align:center; margin-bottom:20px;">
+    Pour toute demande d’inscription, d’évaluation de départ ou de renseignements complémentaires,  
+    merci de remplir le formulaire ci-dessous.
+  </p>
+
+  <form action="https://formspree.io/f/mreaykpj" method="POST" style="max-width:600px; margin:0 auto;">
+
+    <input type="Nom et prenom" name="Nom et prénom" placeholder="Nom et prénom" required
+           style="width:100%; padding:10px; margin-bottom:12px;">
+
+    <input type="Email" name="Email" placeholder="Adresse email" required
+           style="width:100%; padding:10px; margin-bottom:12px;">
+
+    <input type="Numero de téléphone" name="Telephone" placeholder="Téléphone" required
+           style="width:100%; padding:10px; margin-bottom:12px;">
+
+    <!-- MENU DÉROULANT POUR FORMATIONS DEMANDÉES -->
+    <label for="Formation demandées" style="display:block; margin-bottom:8px;">Formations demandées :</label>
+    <select name="Formation demandées" id="Formation demandées" required
+            style="width:100%; padding:10px; margin-bottom:15px;">
+      <option value="">-- Sélectionnez une formule --</option>
+      <option value="Permis B - Boîte manuelle 20h">Permis B - Boîte manuelle 20h</option>
+      <option value="Permis B - Boîte manuelle 25h">Permis B - Boîte manuelle 25h</option>
+      <option value="Permis B - Boîte automatique">Permis B - Boîte automatique</option>
+      <option value="Permis B - Boîte automatique sans code">Permis B - Boîte automatique sans code</option>
+      <option value="Permis B - Boîte manuelle sans code">Permis B - Boîte manuelle sans code</option>
+      <option value="AAC - Boîte manuelle">AAC - Boîte manuelle</option>
+      <option value="AAC - Boîte automatique">AAC - Boîte automatique</option>
+      <option value="Formule théorique">Formule théorique</option>
+      <option value="Formation passerelle (automatique -> manuelle)">Formation passerelle (automatique -> manuelle)</option>
+    </select>
+
+    <!-- L'ancien textarea pour “Objet du rendez-vous” peut rester si tu veux le texte libre -->
+    <textarea name="Objet du rendez-vous" rows="3" placeholder="Informations supplémentaires (si nécessaire)"
+              style="width:100%; padding:10px; margin-bottom:15px;"></textarea>
+
+    <textarea name="Code postal" rows="5" placeholder=" Votre code postal"
+              style="width:100%; padding:10px; margin-bottom:12px;"></textarea>
+
+    <button type="submit"
+            style="width:100%; padding:12px; background:#00bfff; color:#fff; border:none; border-radius:5px;">
+      Envoyer la demande
+    </button>
+
+  </form>
+
+  <p style="text-align:center; margin-top:20px; font-size:0.9em;">
+    Nous vous recontacterons rapidement pour fixer un rendez-vous. Les rendez vous se font sur les heures d'ouverture du bureau, indiqué sur le site.
+  </p>
+  <p style="text-align:center; margin-top:20px;">
+    Les rendez-vous se font pendant les 
+    <a href="#horaires" style="color:#00bfff; text-decoration:underline;">
+      horaires d’ouverture du bureau
+    </a>.
+  </p>
+</section>
 </main>
 
 <footer>
