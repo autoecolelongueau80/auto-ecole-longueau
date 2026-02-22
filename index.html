@@ -247,7 +247,7 @@
     padding: 16px;
   }
 }
-/* --- Menu Bandeau Noir --- */
+/* Menu fixe bandeau noir */
 #menu-bandeau {
   position: fixed;
   top: 0;
@@ -259,7 +259,7 @@
   gap: 30px;
   padding: 12px 0;
   z-index: 1000;
-  flex-wrap: wrap; /* pour que ça aille à la ligne sur petit écran */
+  flex-wrap: wrap; /* pour mobile */
 }
 
 #menu-bandeau a {
@@ -277,9 +277,8 @@
   border-radius: 5px;
 }
 
-/* Bouton mobile */
 #menu-toggle {
-  display: none;
+  display: none; /* visible seulement mobile */
   background: #00bfff;
   color: #111;
   font-size: 24px;
@@ -302,15 +301,16 @@ section::before {
   #menu-bandeau {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    padding: 0;
     gap: 0;
-    display: none; /* caché par défaut, affiché via JS */
+    display: none; /* caché par défaut sur mobile */
   }
 
   #menu-bandeau a {
-    font-size: 16px;
-    padding: 10px 15px;
     width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-top: 1px solid #222;
   }
 
   #menu-toggle {
@@ -327,7 +327,7 @@ section::before {
   }
 }
 
-/* Menu visible sur mobile quand actif */
+/* Menu visible quand actif sur mobile */
 #menu-bandeau.active {
   display: flex;
 }
@@ -336,7 +336,6 @@ section::before {
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
  
 </head>
-<!-- MENU FIXE EN HAUT AU-DESSUS DU LOGO -->
 <nav id="menu-bandeau">
   <a href="#horaires">Horaires</a>
   <a href="#contacts">Contacts</a>
@@ -349,7 +348,6 @@ section::before {
 
   <!-- Bouton menu mobile -->
   <button id="menu-toggle">&#9776;</button>
-</nav>
 </nav>
 <body>
 <header class="header-image">
@@ -610,49 +608,26 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
 <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</button>
 
 <script>
- // BOUTON BACK TO TOP
-const btn = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  btn.style.display = window.scrollY > 300 ? "block" : "none";
-});
-</script>
-<script>
-  // Animation sections
-  const sections = document.querySelectorAll("section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
-
-  // Bouton back to top
-  const btn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    btn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-</script>
-<script>
-  // --- Scroll décalé pour menu fixe ---
+  // Scroll décalé pour menu fixe
   document.querySelectorAll('#menu-bandeau a').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('href').substring(1);
       const target = document.getElementById(targetId);
-      if (target) {
+      if(target){
         const menuHeight = document.getElementById('menu-bandeau').offsetHeight;
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - menuHeight;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        const targetPos = target.getBoundingClientRect().top + window.scrollY - menuHeight;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
       }
 
-      // Masquer le menu sur mobile après clic
+      // Fermer menu mobile après clic
       if(window.innerWidth <= 768){
         document.getElementById('menu-bandeau').classList.remove('active');
       }
     });
   });
 
-  // --- Toggle menu mobile ---
+  // Toggle menu mobile
   const toggleBtn = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu-bandeau');
   toggleBtn.addEventListener('click', () => {
