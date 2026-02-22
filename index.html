@@ -247,7 +247,7 @@
     padding: 16px;
   }
 }
-/* Menu fixe bandeau noir */
+/* Menu bandeau noir */
 #menu-bandeau {
   position: fixed;
   top: 0;
@@ -259,7 +259,7 @@
   gap: 30px;
   padding: 12px 0;
   z-index: 1000;
-  flex-wrap: wrap; /* pour mobile */
+  flex-wrap: wrap;
 }
 
 #menu-bandeau a {
@@ -286,6 +286,7 @@
   padding: 5px 12px;
   cursor: pointer;
   border-radius: 5px;
+  margin-left: 10px;
 }
 
 /* Décalage scroll pour menu fixe */
@@ -325,11 +326,11 @@ section::before {
     height: 120px; /* décalage plus grand sur mobile */
     margin-top: -120px;
   }
-}
 
-/* Menu visible quand actif sur mobile */
-#menu-bandeau.active {
-  display: flex;
+  /* Menu visible quand actif */
+  #menu-bandeau.active {
+    display: flex;
+  }
 }
   </style>
 
@@ -345,8 +346,6 @@ section::before {
   <a href="#Statistiques">Statistiques</a>
   <a href="#rendez-vous">Rendez-vous</a>
   <a href="#faq">FAQ</a>
-
-  <!-- Bouton menu mobile -->
   <button id="menu-toggle">&#9776;</button>
 </nav>
 <body>
@@ -632,6 +631,31 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
   const menu = document.getElementById('menu-bandeau');
   toggleBtn.addEventListener('click', () => {
     menu.classList.toggle('active');
+  });
+</script>
+<script>
+  // Toggle menu mobile
+  const toggleBtn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu-bandeau');
+  toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  // Scroll décalé pour menu fixe
+  document.querySelectorAll('#menu-bandeau a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if(target){
+        const menuHeight = document.getElementById('menu-bandeau').offsetHeight;
+        const targetPos = target.getBoundingClientRect().top + window.scrollY - menuHeight;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+      }
+      if(window.innerWidth <= 768){
+        menu.classList.remove('active'); // fermer menu après clic
+      }
+    });
   });
 </script>
 </body>
