@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="GnB-KZuUOlca6yC..." />
-  <title>Auto-École de Longueau | Permis B, AAC, Boîte auto</title>
+  <title>Auto-École de Longueau | Permis B, AAC, Boîte auto,manuelle</title>
 
   <!-- FAVICON -->
   <link rel="icon" href="favicon.png" type="image/png">
@@ -30,7 +30,7 @@
     section {
       margin-bottom: 50px;
       padding: 15px;
-      opacity: 0;
+      opacity: 1;
       transform: translateY(40px);
       transition: all 1s ease;
     }
@@ -194,6 +194,7 @@
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
+ 
 </head>
 
 <body>
@@ -306,7 +307,7 @@
       </div>
       <div class="membre">
         <img src="monitrice2.jpg" alt="Monitrice 2">
-        <p>Sarah – Monitrice depuis 2025, une énergie nouvelle et une approche moderne de l’apprentissage de la conduite.</p>
+        <p>Sarah – Monitrice depuis 2025, une énergie nouvelle et une approche moderne de l’apprentissage et de la conduite.</p>
       </div>
     </div>
 
@@ -330,11 +331,19 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
       <li><p>"Auto-école vivement recommandée ! Sylvie est une monitrice très sympathique, patiente et à l'écoute, mais aussi très professionnelle et pédagogue. Un grand merci pour tous les précieux conseils qu'elle a pu me donner et qui m'ont aidée à obtenir mon permis !!!"</p></li>
     </ul>
   </section>
-
+ 
   <!-- IMAGE AVIS GOOGLE -->
   <section id="avis-google" style="text-align:center; margin-bottom:50px;">
     <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis" style="width:250px; height:auto;">
   </section>
+  <!-- Statistiques -->
+   <h2>Statistiques</h2>
+  <section id="Statistiques" style="text-align:center; margin-bottom:50px;">
+    <img src="graphique.jpg" alt="graphique" style="width:400px; height:auto;">
+  </section>
+  <p style="text-align:center; margin-bottom:30px;">
+   <b> SOIT PLUS DE 98% DE RÉUSSITE</b>
+  </p>
 <!-- PRISE DE RENDEZ-VOUS -->
 <section id="rendez-vous">
   <h2>Prise de rendez-vous</h2>
@@ -354,12 +363,14 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
 
     <input type="Numero de téléphone" name="Telephone" placeholder="Téléphone" required
            style="width:100%; padding:10px; margin-bottom:12px;">
+    <input name="Code postal" rows="5" placeholder=" Votre code postal"
+              style="width:100%; padding:10px; margin-bottom:12px;">
 
     <!-- MENU DÉROULANT POUR FORMATIONS DEMANDÉES -->
-    <label for="Formation demandées" style="display:block; margin-bottom:8px;">Formations demandées :</label>
-    <select name="Formation demandées" id="Formation demandées" required
+    <label for="Formation demandée" style="display:block; margin-bottom:8px;">Formation demandée :</label>
+    <select name="Formation demandée" id="Formation demandées" required
             style="width:100%; padding:10px; margin-bottom:15px;">
-      <option value="">-- Sélectionnez une formule --</option>
+      <option value="">-- Sélectionnez une formation--</option>
       <option value="Permis B - Boîte manuelle 20h">Permis B - Boîte manuelle 20h</option>
       <option value="Permis B - Boîte manuelle 25h">Permis B - Boîte manuelle 25h</option>
       <option value="Permis B - Boîte automatique">Permis B - Boîte automatique</option>
@@ -369,14 +380,12 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
       <option value="AAC - Boîte automatique">AAC - Boîte automatique</option>
       <option value="Formule théorique">Formule théorique</option>
       <option value="Formation passerelle (automatique -> manuelle)">Formation passerelle (automatique -> manuelle)</option>
+      <option value="Évaluation (hors forfait)">Évaluation (hors forfait)</option>
     </select>
 
     <!-- L'ancien textarea pour “Objet du rendez-vous” peut rester si tu veux le texte libre -->
     <textarea name="Objet du rendez-vous" rows="3" placeholder="Informations supplémentaires (si nécessaire)"
               style="width:100%; padding:10px; margin-bottom:15px;"></textarea>
-
-    <textarea name="Code postal" rows="5" placeholder=" Votre code postal"
-              style="width:100%; padding:10px; margin-bottom:12px;"></textarea>
 
     <button type="submit"
             style="width:100%; padding:12px; background:#00bfff; color:#fff; border:none; border-radius:5px;">
@@ -394,6 +403,52 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
       horaires d’ouverture du bureau
     </a>.
   </p>
+
+</section>
+<!-- FAQ simple et sûre -->
+<section id="faq">
+  <h2>Questions frequentes</h2>
+
+  <h3 style="color:#00bfff;">1. À quel âge puis-je commencer la conduite accompagnée (AAC) ?</h3>
+  <p>La conduite accompagnée peut débuter dès 15 ans, après avoir validé le code de la route. Nous organisons la formation théorique et pratique adaptée à votre âge.</p>
+
+  <h3 style="color:#00bfff;">2. Combien de temps faut-il pour obtenir le permis B ?</h3>
+  <p>La durée varie selon votre progression et le forfait choisi : environ 20 à 25 heures de conduite pour la boîte manuelle et 13 heures pour la boîte automatique. La théorie doit être acquise sinon la pratique ne commencera pas</p>
+
+  <h3 style="color:#00bfff;">3. Quels documents dois-je fournir pour m'inscrire ?</h3>
+  <p>Une piece d'identité, un justificatif de domicile de moins de 3 mois, une photo d'identité récente et, le cas écheant, le livret de conduite accompagnée pour l'AAC.</p>
+
+  <h3 style="color:#00bfff;">4. Comment se déroule l'examen du code de la route ?</h3>
+  <p>L'examen du code comporte 40 questions à choix multiple. Il faut repondre correctement à au moins 35 questions pour reussir. Les questions portent sur la signalisation, les régles de circulation et la securité routière.</p>
+
+  <h3 style="color:#00bfff;">5. Quels sont les principaux points à retenir pour reussir le code ?</h3>
+  <p>Apprenez la signalisation, les règles de priorité, les distances de securité, les limitations de vitesse et les comportements à adopter en cas d'urgence. La pratique sur des sessions de code dans notre salle spécialisée est très utile.</p>
+
+  <h3 style="color:#00bfff;">6. Comment se passe l'examen pratique de conduite ?</h3>
+  <p>L'examen pratique dure environ 30 à 40 minutes et évalue votre maitrise du vehicule, votre respect du code de la route et votre capacité à anticiper les dangers. L'éxaminateur vous accompagne sur differents types de routes.</p>
+
+  <h3 style="color:#00bfff;">7. Que faire en cas d'erreur pendant l'examen de conduite ?</h3>
+  <p>Restez calme, corrigez votre erreur si possible et poursuivez la conduite normalement. L'examinateur note chaque erreur, mais une seule erreur n'entraîne pas automatiquement l'echec.</p>
+
+  <h3 style="color:#00bfff;">8. Quels conseils pour bien progresser en conduite ?</h3>
+  <p>Pratiquez régulièrement, écoutez les conseils de votre moniteur, soyez attentif à la route et à vos reflexes. Notez vos erreurs et travaillez-les à chaque leçon.</p>
+
+  <h3 style="color:#00bfff;">9. Quels sont les risques les plus frequents pour les nouveaux conducteurs ?</h3>
+  <p>Les erreurs courantes incluent la mauvaise éstimation des distances, les excès de vitesse, les oublis de clignotants et le stress lors des changements de voie ou aux intersections. La pratique regulière reduit ces risques.</p>
+
+  <h3 style="color:#00bfff;">10. Est-il possible de reviser le code en ligne avant les cours ?</h3>
+  <p>Oui, il existe dans notre école une formule qui permet de faire des sessions afin de reviser le code de la route depuis chez soi grâce au Code Rousseau. Cela permet de se familiariser avec les questions et d'arriver mieux préparé aux cours pratiques et à l'examen.</p>
+
+  <h3 style="color:#00bfff;">11. Comment savoir si je suis prêt pour l'examen du code de la route ?</h3>
+  <p>Procédez à votre auto-évaluation, et lorsque vous vous estimez prêt, vous pouvez solliciter une session dans le bureau de poste de votre choix, au plus proche de votre domicile
+  </p>
+
+  <h3 style="color:#00bfff;">12. Que se passe-t-il si j'échoue a l'examen du code ou de la conduite ?</h3>
+  <p>Vous pouvez le repasser. Après un échec au code, vous pouvez vous réinscrire immediatement pour le repasser. Pour l'éxamen pratique, il faudra généralement attendre quelques semaines et continuer la pratique avec votre moniteur, si vous avez choisi la formule 25h vous aurez le droit à un deuxième passage au permis auquel cas il faudra repayer.</p>
+
+  <h3 style="color:#00bfff;">13. Quels conseils pour gérer le stress le jour de l'examen ?</h3>
+  <p>Respirez profondement, restez concentré sur votre conduite, écoutez attentivement l'éxaminateur et rappelez-vous que vous êtes preparé. Une bonne nuit de sommeil et un petit dejeuner équilibré aident aussi à être détendu.</p>
+
 </section>
 </main>
 
@@ -418,6 +473,21 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
     btn.style.display = window.scrollY > 300 ? "block" : "none";
   });
 </script>
+<script>
+  // Animation sections
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });xx
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
 
+  // Bouton back to top
+  const btn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => { btn.style.display = window.scrollY > 300 ? "block" : "none"; });
+
+  
+</script>
 </body>
 </html>
