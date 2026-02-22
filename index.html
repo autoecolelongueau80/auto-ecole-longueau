@@ -313,6 +313,22 @@ section h2 {
   scroll-margin-top: var(--menu-hauteur);
 }
 }
+/* --- Styles généraux du menu (déjà présents) --- */
+
+/* Styles responsive à ajouter à la fin */
+@media (max-width: 600px) {
+  #menu-bandeau {
+    flex-direction: column; /* empile les liens */
+    gap: 5px;
+    padding: 5px 10px;
+    font-size: 16px; /* texte plus petit */
+  }
+
+  #menu-bandeau a {
+    padding: 8px;
+    text-align: center;
+  }
+}
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
