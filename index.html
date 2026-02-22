@@ -247,86 +247,114 @@
     padding: 16px;
   }
 }
-/* ================== MENU FIXE AU-DESSUS DU LOGO ================== */
-#menu-fixe {
+/* --- Menu Bandeau Noir --- */
+#menu-bandeau {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #111; /* bandeau noir */
-  z-index: 9999;
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 30px;
   padding: 12px 0;
+  z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Liens bleus centrés */
-#menu-fixe a {
-  color: #00bfff; /* bleu */
+#menu-bandeau a {
+  color: #00bfff; /* texte bleu */
   text-decoration: none;
-  margin: 0 15px;
-  font-size: 1em;
   font-weight: bold;
-  transition: color 0.3s;
+  font-size: 18px;
+  padding: 5px 12px;
+  transition: background 0.3s, color 0.3s;
 }
 
-#menu-fixe a:hover {
-  color: #0097d6;
-}
-
-/* Décalage correct des sections pour scroll */
-section {
-  scroll-margin-top: 60px; /* ajuster selon la hauteur du menu */
-}
-
-/* Pour que le header ne soit pas caché par le menu */
-header.header-image {
-  margin-top: 50px; /* même valeur que scroll-margin-top */
-}
-
-/* Bouton back-to-top */
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+#menu-bandeau a:hover {
   background: #00bfff;
-  color: #fff;
-  border: none;
-  padding: 12px 16px;
+  color: #111;
   border-radius: 5px;
-  cursor: pointer;
-  display: none;
-  /* Définir la hauteur du menu pour le scroll */
-:root {
-  --menu-hauteur: 60px; /* Ajuste cette valeur si ton bandeau change de hauteur */
 }
 
-/* Pour que les titres h2 ne soient pas cachés par le menu */
-section h2 {
-  scroll-margin-top: var(--menu-hauteur);
+/* --- Décalage du scroll pour que le titre soit visible sous le menu --- */
+section::before {
+  content: "";
+  display: block;
+  height: 70px; /* hauteur du menu */
+  margin-top: -70px;
 }
 
-/* Correction spécifique pour Statistiques si nécessaire */
-#Statistiques h2 {
-  scroll-margin-top: var(--menu-hauteur);
-}
-}
-/* --- Styles généraux du menu (déjà présents) --- */
-
-/* Styles responsive à ajouter à la fin */
+/* --- Mobile --- */
 @media (max-width: 600px) {
   #menu-bandeau {
-    flex-direction: column; /* empile les liens */
-    gap: 5px;
-    padding: 5px 10px;
-    font-size: 16px; /* texte plus petit */
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
   }
 
   #menu-bandeau a {
-    padding: 8px;
-    text-align: center;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  section::before {
+    height: 120px; /* plus grand sur mobile si menu prend plus de place */
+    margin-top: -120px;
+  }
+}
+#menu-bandeau {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111; /* noir */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 12px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+#menu-bandeau a {
+  color: #00bfff; /* bleu */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#menu-bandeau a:hover {
+  background: #00bfff;
+  color: #111;
+  border-radius: 5px;
+}
+
+/* Scroll offset pour le menu fixe */
+section::before {
+  content: "";
+  display: block;
+  height: 70px; /* hauteur du menu */
+  margin-top: -70px;
+}
+
+@media (max-width:600px) {
+  #menu-bandeau {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+  }
+  #menu-bandeau a {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  section::before {
+    height: 120px; /* menu plus grand sur mobile */
+    margin-top: -120px;
   }
 }
   </style>
@@ -334,8 +362,8 @@ section h2 {
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
  
 </head>
- <!-- MENU FIXE EN HAUT AU-DESSUS DU LOGO -->
-<nav id="menu-fixe">
+<!-- MENU FIXE EN HAUT AU-DESSUS DU LOGO -->
+<nav id="menu-bandeau">
   <!--<a href="#infos-derniere-minute">Infos</a>-->
   <a href="#horaires">Horaires</a>
   <a href="#contacts">Contacts</a>
@@ -486,15 +514,13 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
     <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis" style="width:250px; height:auto;">
   </section>
 
-<!-- Statistiques -->
 <section id="Statistiques" style="margin-bottom:20px;">
   <h2 style="text-align:center;">Statistiques</h2>
-  <!-- Graphique -->
   <img src="graphique.jpg" alt="graphique" style="width:80%; max-width:400px; height:auto; display:block; margin: 0 auto;">
+  <p style="text-align:center; font-weight:bold; margin-top:10px;">
+    SOIT PLUS DE 98% DE RÉUSSITE SUR 5 ANS
+  </p>
 </section>
-<p style="text-align:center; font-weight:bold; margin:0 0 20px 0;">
-  SOIT PLUS DE 98% DE RÉUSSITE SUR 5 ANS
-</p>
 <!-- PRISE DE RENDEZ-VOUS -->
 <section id="rendez-vous">
   <h2>Prise de rendez-vous</h2>
@@ -619,31 +645,29 @@ window.addEventListener("scroll", () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add("visible");
-    });xx
+    });
   }, { threshold: 0.1 });
   sections.forEach(section => observer.observe(section));
 
   // Bouton back to top
   const btn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => { btn.style.display = window.scrollY > 300 ? "block" : "none"; });
-
-  
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
 </script>
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
+document.querySelectorAll('#menu-bandeau a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      const menuHeight = document.getElementById('menu-bandeau').offsetHeight;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - menuHeight;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
   });
-
-  // Fermer le menu quand on clique sur un lien
-  const menuLinks = menu.querySelectorAll('a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('show');
-    });
-  });
+});
 </script>
 </body>
 </html>
