@@ -247,23 +247,23 @@
     padding: 16px;
   }
 }
-/* --- Menu Bandeau Noir Fixe --- */
+/* Menu bandeau noir */
 #menu-bandeau {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #111; /* bandeau noir */
+  background-color: #111;
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 12px 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
 }
 
 #menu-bandeau a {
-  color: #00bfff; /* texte bleu */
+  color: #00bfff;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
@@ -277,85 +277,114 @@
   border-radius: 5px;
 }
 
-/* --- Décalage scroll pour que le titre soit visible sous le menu --- */
+#menu-toggle {
+  display: none; /* visible seulement mobile */
+  background: #00bfff;
+  color: #111;
+  font-size: 24px;
+  border: none;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+/* Décalage scroll pour menu fixe */
 section::before {
   content: "";
   display: block;
-  height: 70px; /* hauteur du menu */
+  height: 70px;
   margin-top: -70px;
 }
 
-/* --- Logo header responsive --- */
-.header-image {
-  margin-top: 70px; /* laisse de la place pour le menu */
-  text-align: center;
-}
-
-.header-image img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 /* --- Mobile --- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   #menu-bandeau {
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0;
+    gap: 0;
+    display: none; /* caché par défaut sur mobile */
   }
 
   #menu-bandeau a {
+    width: 100%;
+    padding: 10px 15px;
     font-size: 16px;
-    padding: 8px 12px;
+    border-top: 1px solid #222;
+  }
+
+  #menu-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
   }
 
   section::before {
-    height: 120px; /* décale plus le scroll pour mobile */
+    height: 120px; /* décalage plus grand sur mobile */
     margin-top: -120px;
   }
 
-  .header-image {
-    margin-top: 120px; /* espace sous le menu */
+  /* Menu visible quand actif */
+  #menu-bandeau.active {
+    display: flex;
   }
+}
+/* Menu fixe en haut */
+#menu-bandeau {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111; /* bandeau noir */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 12px 0;
+  z-index: 1000;
+}
 
-  .header-image img {
-    width: 80%;
-    max-width: 300px;
+#menu-bandeau a {
+  color: #00bfff; /* texte bleu */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 12px;
+}
+
+#menu-bandeau a:hover {
+  background: #00bfff;
+  color: #111;
+  border-radius: 5px;
+}
+/* Décalage du contenu sous le menu fixe */
+body {
+  padding-top: 70px; /* hauteur du menu sur PC */
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 130px; /* hauteur du menu sur mobile */
   }
 }
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
  
-</head>
 <!-- MENU FIXE AU-DESSUS DU LOGO -->
-<nav id="menu-bandeau">
-  <a href="#horaires">Horaires</a>
-  <a href="#contacts">Contacts</a>
-  <a href="#tarifs">Tarifs</a>
-  <a href="#equipe">Équipe</a>
-  <a href="#avis">Avis</a>
-  <a href="#Statistiques">Statistiques</a>
-  <a href="#rendez-vous">Rendez-vous</a>
-  <a href="#faq">FAQ</a>
-</nav>
-<body>
-  <!-- MENU FIXE AU-DESSUS DU LOGO -->
-<nav id="menu-bandeau">
-  <a href="#horaires">Horaires</a>
-  <a href="#contacts">Contacts</a>
-  <a href="#tarifs">Tarifs</a>
-  <a href="#equipe">Équipe</a>
-  <a href="#avis">Avis</a>
-  <a href="#Statistiques">Statistiques</a>
-  <a href="#rendez-vous">Rendez-vous</a>
-  <a href="#faq">FAQ</a>
-</nav>
-<!-- LOGO DE L'AUTO-ÉCOLE -->
+  <nav id="menu-bandeau">
+    <a href="#horaires">Horaires</a>
+    <a href="#contacts">Contacts</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#equipe">Équipe</a>
+    <a href="#avis">Avis</a>
+    <a href="#Statistiques">Statistiques</a>
+    <a href="#rendez-vous">Rendez-vous</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <!-- WRAPPER LOGO POUR LE PUSHSOUS LE MENU -->
   <header class="header-image">
     <img src="auto-ecole.jpg" alt="Auto-École de Longueau">
   </header>
