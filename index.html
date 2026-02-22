@@ -247,12 +247,89 @@
     padding: 16px;
   }
 }
+/* ================== MENU FIXE AU-DESSUS DU LOGO ================== */
+#menu-fixe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111; /* bandeau noir */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Liens bleus centrés */
+#menu-fixe a {
+  color: #00bfff; /* bleu */
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+#menu-fixe a:hover {
+  color: #0097d6;
+}
+
+/* Décalage correct des sections pour scroll */
+section {
+  scroll-margin-top: 60px; /* ajuster selon la hauteur du menu */
+}
+
+/* Pour que le header ne soit pas caché par le menu */
+header.header-image {
+  margin-top: 50px; /* même valeur que scroll-margin-top */
+}
+
+/* Bouton back-to-top */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00bfff;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  /* Définir la hauteur du menu pour le scroll */
+:root {
+  --menu-hauteur: 60px; /* Ajuste cette valeur si ton bandeau change de hauteur */
+}
+
+/* Pour que les titres h2 ne soient pas cachés par le menu */
+section h2 {
+  scroll-margin-top: var(--menu-hauteur);
+}
+
+/* Correction spécifique pour Statistiques si nécessaire */
+#Statistiques h2 {
+  scroll-margin-top: var(--menu-hauteur);
+}
+}
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
  
 </head>
-
+ <!-- MENU FIXE EN HAUT AU-DESSUS DU LOGO -->
+<nav id="menu-fixe">
+  <!--<a href="#infos-derniere-minute">Infos</a>-->
+  <a href="#horaires">Horaires</a>
+  <a href="#contacts">Contacts</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#equipe">Équipe</a>
+  <a href="#avis">Avis</a>
+  <a href="#Statistiques">Statistiques</a>
+  <a href="#rendez-vous">Rendez-vous</a>
+  <a href="#faq">FAQ</a>
+</nav>
 <body>
 <header class="header-image">
   <img src="auto-ecole.jpg" alt="Auto-École de Longueau">
@@ -392,14 +469,15 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
   <section id="avis-google" style="text-align:center; margin-bottom:50px;">
     <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis" style="width:250px; height:auto;">
   </section>
+
 <!-- Statistiques -->
-<h2 style="text-align:center;">Statistiques</h2>
-<section id="Statistiques" style="text-align:center; margin-bottom:20px;">
+<section id="Statistiques" style="margin-bottom:20px;">
+  <h2 style="text-align:center;">Statistiques</h2>
   <!-- Graphique -->
-  <img src="graphique.jpg" alt="graphique" style="width:80%; max-width:400px; height:auto;">
+  <img src="graphique.jpg" alt="graphique" style="width:80%; max-width:400px; height:auto; display:block; margin: 0 auto;">
 </section>
 <p style="text-align:center; font-weight:bold; margin:0 0 20px 0;">
-  SOIT PLUS DE 98% DE RÉUSSITE
+  SOIT PLUS DE 98% DE RÉUSSITE SUR 5 ANS
 </p>
 <!-- PRISE DE RENDEZ-VOUS -->
 <section id="rendez-vous">
@@ -513,19 +591,11 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
 <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</button>
 
 <script>
-  const sections = document.querySelectorAll("section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.1 });
-
-  sections.forEach(section => observer.observe(section));
-
-  const btn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    btn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
+ // BOUTON BACK TO TOP
+const btn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+  btn.style.display = window.scrollY > 300 ? "block" : "none";
+});
 </script>
 <script>
   // Animation sections
@@ -542,6 +612,22 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
   window.addEventListener("scroll", () => { btn.style.display = window.scrollY > 300 ? "block" : "none"; });
 
   
+</script>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+  // Fermer le menu quand on clique sur un lien
+  const menuLinks = menu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('show');
+    });
+  });
 </script>
 </body>
 </html>
