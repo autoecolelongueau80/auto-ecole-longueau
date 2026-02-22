@@ -191,6 +191,62 @@
       line-height: 1.6;
     }
       */
+
+      /* FORMULAIRE PRISE DE RENDEZ-VOUS */
+.form-rdv {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-rdv label {
+  font-size: 20px;       /* Taille des labels */
+  font-weight: bold;
+}
+
+.form-rdv input,
+.form-rdv select,
+.form-rdv textarea {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;       /* Taille du texte dans les champs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-rdv button {
+  padding: 18px;
+  font-size: 20px;
+  background: #00bfff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-rdv button:hover {
+  background: #0097d6;
+}
+
+@media (max-width: 600px) {
+  .form-rdv label {
+    font-size: 18px;
+  }
+
+  .form-rdv input,
+  .form-rdv select,
+  .form-rdv textarea {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .form-rdv button {
+    font-size: 18px;
+    padding: 16px;
+  }
+}
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
@@ -354,27 +410,26 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
     merci de remplir le formulaire ci-dessous.
   </p>
 
-  <form action="https://formspree.io/f/mreaykpj" method="POST" style="max-width:600px; margin:0 auto;">
+  <form action="https://formspree.io/f/mreaykpj" method="POST" class="form-rdv">
 
-    <input type="Nom" name="Nom" placeholder="Nom" required
-           style="width:100%; padding:20px; margin-bottom:12px;">
-   <input type="Prénom" name="Prénom" placeholder="Prénom" required
-           style="width:100%; padding:20px; margin-bottom:12px;">
+    <label for="Nom">Nom :</label>
+    <input type="text" id="Nom" name="Nom" placeholder="Nom" required>
 
+    <label for="Prénom">Prénom :</label>
+    <input type="text" id="Prénom" name="Prénom" placeholder="Prénom" required>
 
-    <input type="Email" name="Email" placeholder="Adresse email" required
-           style="width:100%; padding:20px; margin-bottom:12px;">
+    <label for="Email">Adresse email :</label>
+    <input type="email" id="Email" name="Email" placeholder="Adresse email" required>
 
-    <input type="Numero de téléphone" name="Telephone" placeholder="Téléphone" required
-           style="width:100%; padding:20px; margin-bottom:12px;">
-    <input name="Code postal" rows="5" placeholder=" Votre code postal"
-              style="width:100%; padding:20px; margin-bottom:12px;">
+    <label for="Telephone">Téléphone :</label>
+    <input type="tel" id="Telephone" name="Telephone" placeholder="Téléphone" required>
 
-    <!-- MENU DÉROULANT POUR FORMATIONS DEMANDÉES -->
-    <label for="Formation demandée" style="display:block; margin-bottom:8px;">Formation demandée :</label>
-    <select name="Formation demandée" id="Formation demandées" required
-            style="width:100%; padding:20px; margin-bottom:15px;">
-      <option value="">-- Sélectionnez une formation--</option>
+    <label for="CodePostal">Code postal :</label>
+    <input type="text" id="CodePostal" name="CodePostal" placeholder="Votre code postal" required>
+
+    <label for="Formation">Formation demandée :</label>
+    <select name="Formation" id="Formation" required>
+      <option value="">-- Sélectionnez une formation --</option>
       <option value="Permis B - Boîte manuelle 20h">Permis B - Boîte manuelle 20h</option>
       <option value="Permis B - Boîte manuelle 25h">Permis B - Boîte manuelle 25h</option>
       <option value="Permis B - Boîte automatique">Permis B - Boîte automatique</option>
@@ -387,9 +442,26 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
       <option value="Évaluation (hors forfait)">Évaluation (hors forfait)</option>
     </select>
 
+    <label for="Objet">Informations supplémentaires :</label>
+    <textarea id="Objet" name="Objet" rows="3" placeholder="Informations supplémentaires (si nécessaire)"></textarea>
+
+    <button type="submit">Envoyer la demande</button>
+
+  </form>
+
+  <p style="text-align:center; margin-top:20px; font-size:0.9em;">
+    Nous vous recontacterons rapidement pour fixer un rendez-vous. Les rendez vous se font sur les heures d'ouverture du bureau, indiqué sur le site.
+  </p>
+  <p style="text-align:center; margin-top:20px;">
+    Les rendez-vous se font pendant les 
+    <a href="#horaires" style="color:#00bfff; text-decoration:underline;">
+      horaires d’ouverture du bureau
+    </a>.
+  </p>
+</section>
     <!-- L'ancien textarea pour “Objet du rendez-vous” peut rester si tu veux le texte libre -->
     <textarea name="Objet du rendez-vous" rows="3" placeholder="Informations supplémentaires (si nécessaire)"
-              style="width:100%; padding:20px; margin-bottom:15px;"></textarea>
+              style="width:100%; padding:20px; margin-bottom:25px;"></textarea>
 
     <button type="submit"
             style="width:100%; padding:22px; background:#00bfff; color:#fff; border:none; border-radius:5px;">
