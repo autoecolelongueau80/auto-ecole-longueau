@@ -389,7 +389,6 @@ section::before {
     align-items: flex-start;
     padding: 0;
     gap: 0;
-    display: none; /* caché par défaut sur mobile */
   }
 
   #menu-bandeau a {
@@ -416,6 +415,9 @@ section::before {
   #menu-bandeau.active {
     display: flex;
   }
+}
+.header-image {
+  margin-top: 70px; /* espace pour que le menu fixe ne recouvre pas le logo */
 }
   </style>
 
