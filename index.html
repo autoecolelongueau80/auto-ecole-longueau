@@ -253,17 +253,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #111; /* bandeau noir */
+  background-color: #111;
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 12px 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  flex-wrap: wrap; /* pour que ça aille à la ligne sur petit écran */
 }
 
 #menu-bandeau a {
-  color: #00bfff; /* texte bleu */
+  color: #00bfff;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
@@ -277,85 +277,59 @@
   border-radius: 5px;
 }
 
-/* --- Décalage du scroll pour que le titre soit visible sous le menu --- */
+/* Bouton mobile */
+#menu-toggle {
+  display: none;
+  background: #00bfff;
+  color: #111;
+  font-size: 24px;
+  border: none;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Décalage scroll pour menu fixe */
 section::before {
   content: "";
   display: block;
-  height: 70px; /* hauteur du menu */
+  height: 70px;
   margin-top: -70px;
 }
 
 /* --- Mobile --- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   #menu-bandeau {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
     padding: 10px;
-    align-items: center;
+    gap: 0;
+    display: none; /* caché par défaut, affiché via JS */
   }
 
   #menu-bandeau a {
     font-size: 16px;
-    padding: 8px 12px;
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  #menu-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
   }
 
   section::before {
-    height: 120px; /* plus grand sur mobile si menu prend plus de place */
+    height: 120px; /* décalage plus grand sur mobile */
     margin-top: -120px;
   }
 }
-#menu-bandeau {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #111; /* noir */
+
+/* Menu visible sur mobile quand actif */
+#menu-bandeau.active {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 12px 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-#menu-bandeau a {
-  color: #00bfff; /* bleu */
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 5px 12px;
-  transition: background 0.3s, color 0.3s;
-}
-
-#menu-bandeau a:hover {
-  background: #00bfff;
-  color: #111;
-  border-radius: 5px;
-}
-
-/* Scroll offset pour le menu fixe */
-section::before {
-  content: "";
-  display: block;
-  height: 70px; /* hauteur du menu */
-  margin-top: -70px;
-}
-
-@media (max-width:600px) {
-  #menu-bandeau {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    align-items: center;
-  }
-  #menu-bandeau a {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-  section::before {
-    height: 120px; /* menu plus grand sur mobile */
-    margin-top: -120px;
-  }
 }
   </style>
 
@@ -364,7 +338,6 @@ section::before {
 </head>
 <!-- MENU FIXE EN HAUT AU-DESSUS DU LOGO -->
 <nav id="menu-bandeau">
-  <!--<a href="#infos-derniere-minute">Infos</a>-->
   <a href="#horaires">Horaires</a>
   <a href="#contacts">Contacts</a>
   <a href="#tarifs">Tarifs</a>
@@ -373,6 +346,10 @@ section::before {
   <a href="#Statistiques">Statistiques</a>
   <a href="#rendez-vous">Rendez-vous</a>
   <a href="#faq">FAQ</a>
+
+  <!-- Bouton menu mobile -->
+  <button id="menu-toggle">&#9776;</button>
+</nav>
 </nav>
 <body>
 <header class="header-image">
@@ -656,18 +633,31 @@ window.addEventListener("scroll", () => {
   });
 </script>
 <script>
-document.querySelectorAll('#menu-bandeau a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      const menuHeight = document.getElementById('menu-bandeau').offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - menuHeight;
-      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-    }
+  // --- Scroll décalé pour menu fixe ---
+  document.querySelectorAll('#menu-bandeau a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const menuHeight = document.getElementById('menu-bandeau').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - menuHeight;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+
+      // Masquer le menu sur mobile après clic
+      if(window.innerWidth <= 768){
+        document.getElementById('menu-bandeau').classList.remove('active');
+      }
+    });
   });
-});
+
+  // --- Toggle menu mobile ---
+  const toggleBtn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu-bandeau');
+  toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
 </script>
 </body>
 </html>
