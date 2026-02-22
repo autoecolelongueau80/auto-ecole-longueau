@@ -350,8 +350,8 @@ section::before {
   color: #00bfff; /* texte bleu */
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
-  padding: 5px 12px;
+  font-size: 15px;
+  padding: 5px 10px;
 }
 
 #menu-bandeau a:hover {
@@ -375,6 +375,66 @@ body {
     display: none; /* cacher le menu fixe sur mobile */
   }
 }
+/* VÉHICULES FLEX CÔTÉ À CÔTÉ, CENTRÉS */
+.vehicules {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.vehicule {
+  text-align: center;
+  max-width: 250px;
+}
+
+.vehicule img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .vehicule img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+/* FAQ */
+.faq-question {
+  width: 100%;
+  background-color: #fff;           /* fond blanc */
+  color: #111;                      /* texte noir */
+  cursor: pointer;
+  padding: 15px 20px;
+  border: 2px solid #00bfff;       /* bordure bleue */
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #f0f8ff;        /* léger bleu clair au survol */
+  border-color: #0097d6;            /* bordure un peu plus foncée au survol */
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px 20px;
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.faq-answer p {
+  margin: 0;
+}
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
@@ -384,7 +444,8 @@ body {
     <a href="#horaires">Horaires</a>
     <a href="#contacts">Contacts</a>
     <a href="#tarifs">Tarifs</a>
-    <a href="#equipe">Équipe</a>
+    <a href="#vehicules">Nos véhicules</a>
+    <a href="#equipe">L'équipe</a>
     <a href="#avis">Avis</a>
     <a href="#Statistiques">Statistiques</a>
     <a href="#rendez-vous">Rendez-vous</a>
@@ -490,6 +551,21 @@ body {
     </div>
   </section>
 
+<!-- NOS VÉHICULES -->
+<section id="vehicules">
+  <h2>Nos véhicules</h2>
+  <div class="vehicules">
+    <div class="vehicule">
+      <img src="voiture1.jpg" alt="Voiture boîte automatique">
+      <p><strong>Voiture automatique :</strong> DS 3 Crossback - Rouge Diesel 2024 <br> Pour une conduite plus douce et moderne.</br></p>
+    </div>
+    <div class="vehicule">
+      <img src="voiture2.jpg" alt="Voiture boîte manuelle">
+      <p><strong>Voiture manuelle :</strong> Citroën C3 - Bleue Diesel 2024 <br> Idéale pour apprendre les bases de la conduite manuelle.</br></p>
+    </div>
+    
+  </div>
+</section>
   <!-- ÉQUIPE + TRAIT BLEU + TEXTE FINAL -->
   <section id="equipe">
     <h2>L'équipe</h2>
@@ -595,50 +671,77 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
 
 
 </section>
-<!-- FAQ simple et sûre -->
+<!-- FAQ collapsible -->
 <section id="faq">
-  <h2>Questions frequentes</h2>
-
-  <h3 style="color:#00bfff;">1. À quel âge puis-je commencer la conduite accompagnée (AAC) ?</h3>
-  <p>La conduite accompagnée peut débuter dès 15 ans, après avoir validé le code de la route. Nous organisons la formation théorique et pratique adaptée à votre âge.</p>
-
-  <h3 style="color:#00bfff;">2. Combien de temps faut-il pour obtenir le permis B ?</h3>
-  <p>La durée varie selon votre progression et le forfait choisi : environ 20 à 25 heures de conduite pour la boîte manuelle et 13 heures pour la boîte automatique. La théorie doit être acquise sinon la pratique ne commencera pas</p>
-
-  <h3 style="color:#00bfff;">3. Quels documents dois-je fournir pour m'inscrire ?</h3>
-  <p>Une piece d'identité, un justificatif de domicile de moins de 3 mois, une photo d'identité récente et, le cas écheant, le livret de conduite accompagnée pour l'AAC.</p>
-
-  <h3 style="color:#00bfff;">4. Comment se déroule l'examen du code de la route ?</h3>
-  <p>L'examen du code comporte 40 questions à choix multiple. Il faut repondre correctement à au moins 35 questions pour reussir. Les questions portent sur la signalisation, les régles de circulation et la securité routière.</p>
-
-  <h3 style="color:#00bfff;">5. Quels sont les principaux points à retenir pour reussir le code ?</h3>
-  <p>Apprenez la signalisation, les règles de priorité, les distances de securité, les limitations de vitesse et les comportements à adopter en cas d'urgence. La pratique sur des sessions de code dans notre salle spécialisée est très utile.</p>
-
-  <h3 style="color:#00bfff;">6. Comment se passe l'examen pratique de conduite ?</h3>
-  <p>L'examen pratique dure environ 30 à 40 minutes et évalue votre maitrise du vehicule, votre respect du code de la route et votre capacité à anticiper les dangers. L'éxaminateur vous accompagne sur differents types de routes.</p>
-
-  <h3 style="color:#00bfff;">7. Que faire en cas d'erreur pendant l'examen de conduite ?</h3>
-  <p>Restez calme, corrigez votre erreur si possible et poursuivez la conduite normalement. L'examinateur note chaque erreur, mais une seule erreur n'entraîne pas automatiquement l'echec.</p>
-
-  <h3 style="color:#00bfff;">8. Quels conseils pour bien progresser en conduite ?</h3>
-  <p>Pratiquez régulièrement, écoutez les conseils de votre moniteur, soyez attentif à la route et à vos reflexes. Notez vos erreurs et travaillez-les à chaque leçon.</p>
-
-  <h3 style="color:#00bfff;">9. Quels sont les risques les plus frequents pour les nouveaux conducteurs ?</h3>
-  <p>Les erreurs courantes incluent la mauvaise éstimation des distances, les excès de vitesse, les oublis de clignotants et le stress lors des changements de voie ou aux intersections. La pratique regulière reduit ces risques.</p>
-
-  <h3 style="color:#00bfff;">10. Est-il possible de reviser le code en ligne avant les cours ?</h3>
-  <p>Oui, il existe dans notre école une formule qui permet de faire des sessions afin de reviser le code de la route depuis chez soi grâce au Code Rousseau. Cela permet de se familiariser avec les questions et d'arriver mieux préparé aux cours pratiques et à l'examen.</p>
-
-  <h3 style="color:#00bfff;">11. Comment savoir si je suis prêt pour l'examen du code de la route ?</h3>
-  <p>Procédez à votre auto-évaluation, et lorsque vous vous estimez prêt, vous pouvez solliciter une session dans le bureau de poste de votre choix, au plus proche de votre domicile
+  <h2>Questions fréquentes</h2>
+<p style="text-align:center; margin-top:20px; font-size:2,5em;">
+    Cliquez sur les questions pour voir les réponses 
   </p>
+  <br>
+  <button class="faq-question">1. À quel âge puis-je commencer la conduite accompagnée (AAC) ? </button>
+  <div class="faq-answer">
+    <p>La conduite accompagnée peut débuter dès 15 ans, après avoir validé le code de la route. Nous organisons la formation théorique et pratique adaptée à votre âge.</p>
+  </div>
 
-  <h3 style="color:#00bfff;">12. Que se passe-t-il si j'échoue a l'examen du code ou de la conduite ?</h3>
-  <p>Vous pouvez le repasser. Après un échec au code, vous pouvez vous réinscrire immediatement pour le repasser. Pour l'éxamen pratique, il faudra généralement attendre quelques semaines et continuer la pratique avec votre moniteur, si vous avez choisi la formule 25h vous aurez le droit à un deuxième passage au permis auquel cas il faudra repayer.</p>
+  <button class="faq-question">2. Combien de temps faut-il pour obtenir le permis B ?</button>
+  <div class="faq-answer">
+    <p>La durée varie selon votre progression et le forfait choisi : environ 20 à 25 heures de conduite pour la boîte manuelle et 13 heures pour la boîte automatique. La théorie doit être acquise sinon la pratique ne commencera pas.</p>
+  </div>
 
-  <h3 style="color:#00bfff;">13. Quels conseils pour gérer le stress le jour de l'examen ?</h3>
-  <p>Respirez profondement, restez concentré sur votre conduite, écoutez attentivement l'éxaminateur et rappelez-vous que vous êtes preparé. Une bonne nuit de sommeil et un petit dejeuner équilibré aident aussi à être détendu.</p>
+  <button class="faq-question">3. Quels documents dois-je fournir pour m'inscrire ?</button>
+  <div class="faq-answer">
+    <p>Une pièce d'identité, un justificatif de domicile de moins de 3 mois, une photo d'identité récente et, le cas échéant, le livret de conduite accompagnée pour l'AAC.</p>
+  </div>
 
+  <button class="faq-question">4. Comment se déroule l'examen du code de la route ?</button>
+  <div class="faq-answer">
+    <p>L'examen du code comporte 40 questions à choix multiple. Il faut répondre correctement à au moins 35 questions pour réussir. Les questions portent sur la signalisation, les règles de circulation et la sécurité routière.</p>
+  </div>
+
+  <button class="faq-question">5. Quels sont les principaux points à retenir pour réussir le code ?</button>
+  <div class="faq-answer">
+    <p>Apprenez la signalisation, les règles de priorité, les distances de sécurité, les limitations de vitesse et les comportements à adopter en cas d'urgence. La pratique sur des sessions de code dans notre salle spécialisée est très utile.</p>
+  </div>
+
+  <button class="faq-question">6. Comment se passe l'examen pratique de conduite ?</button>
+  <div class="faq-answer">
+    <p>L'examen pratique dure environ 30 à 40 minutes et évalue votre maîtrise du véhicule, votre respect du code de la route et votre capacité à anticiper les dangers. L’examinateur vous accompagne sur différents types de routes.</p>
+  </div>
+
+  <button class="faq-question">7. Que faire en cas d'erreur pendant l'examen de conduite ?</button>
+  <div class="faq-answer">
+    <p>Restez calme, corrigez votre erreur si possible et poursuivez la conduite normalement. L'examinateur note chaque erreur, mais une seule erreur n'entraîne pas automatiquement l’échec.</p>
+  </div>
+
+  <button class="faq-question">8. Quels conseils pour bien progresser en conduite ?</button>
+  <div class="faq-answer">
+    <p>Pratiquez régulièrement, écoutez les conseils de votre moniteur, soyez attentif à la route et à vos réflexes. Notez vos erreurs et travaillez-les à chaque leçon.</p>
+  </div>
+
+  <button class="faq-question">9. Quels sont les risques les plus fréquents pour les nouveaux conducteurs ?</button>
+  <div class="faq-answer">
+    <p>Les erreurs courantes incluent la mauvaise estimation des distances, les excès de vitesse, les oublis de clignotants et le stress lors des changements de voie ou aux intersections. La pratique régulière réduit ces risques.</p>
+  </div>
+
+  <button class="faq-question">10. Est-il possible de réviser le code en ligne avant les cours ?</button>
+  <div class="faq-answer">
+    <p>Oui, il existe une formule qui permet de faire des sessions afin de réviser le code de la route depuis chez soi grâce au Code Rousseau. Cela permet de se familiariser avec les questions et d’arriver mieux préparé aux cours pratiques et à l’examen.</p>
+  </div>
+
+  <button class="faq-question">11. Comment savoir si je suis prêt pour l'examen du code de la route ?</button>
+  <div class="faq-answer">
+    <p>Procédez à votre auto-évaluation, et lorsque vous vous estimez prêt, vous pouvez solliciter une session dans le bureau de poste de votre choix, au plus proche de votre domicile.</p>
+  </div>
+
+  <button class="faq-question">12. Que se passe-t-il si j’échoue à l'examen du code ou de la conduite ?</button>
+  <div class="faq-answer">
+    <p>Vous pouvez le repasser. Après un échec au code, vous pouvez vous réinscrire immédiatement pour le repasser. Pour l’examen pratique, il faudra généralement attendre quelques semaines et continuer la pratique avec votre moniteur. Si vous avez choisi la formule 25h, vous aurez le droit à un deuxième passage au permis, auquel cas il faudra repayer.</p>
+  </div>
+
+  <button class="faq-question">13. Quels conseils pour gérer le stress le jour de l'examen ?</button>
+  <div class="faq-answer">
+    <p>Respirez profondément, restez concentré sur votre conduite, écoutez attentivement l’examinateur et rappelez-vous que vous êtes préparé. Une bonne nuit de sommeil et un petit déjeuner équilibré aident aussi à être détendu.</p>
+  </div>
 </section>
 </main>
 
@@ -723,6 +826,31 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
         menu.classList.remove('active'); // fermer menu après clic
       }
     });
+  });
+</script>
+<script>
+  const questions = document.querySelectorAll('.faq-question');
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      const isOpen = answer.style.display === 'block';
+      // Fermer toutes les réponses
+      document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+      // Ouvrir la réponse cliquée si elle n'était pas ouverte
+      if (!isOpen) answer.style.display = 'block';
+    });
+  });
+</script>
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Écoute le scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // si on a descendu 300px
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
   });
 </script>
 </body>
