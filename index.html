@@ -344,6 +344,18 @@ body {
 .faq-answer p {
   margin: 0;
 }
+/* Zoom léger des statistiques sur PC et mobile */
+#Statistiques img {
+  transform: scale(1.1); /* 1.1 = 10% plus grand */
+  transition: transform 0.3s ease; /* animation douce */
+}
+
+/* Optionnel : zoom encore un peu plus sur mobile */
+@media (max-width: 600px) {
+  #Statistiques img {
+    transform: scale(1.2); /* 20% plus grand sur petit écran */
+  }
+}
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
