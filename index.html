@@ -37,7 +37,7 @@
 
     h2 {
       margin-bottom: 25px;
-      text-align: center;
+      text-align: left;
       border-bottom: 2px solid #00bfff;
       display: inline-block;
       padding-bottom: 5px;
@@ -157,28 +157,6 @@
       line-height: 1.6;
       text-align: left;
     }
-
-    /* SECTION INFOS DERNIERE MINUTE 
-    #infos-derniere-minute {
-      border: 2px solid #00bfff;
-      background: #f8f9fa;
-      padding: 20px;
-      max-width: 900px;
-      margin: 30px auto;
-      text-align: center;
-    }
-
-    #infos-derniere-minute img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-
-    #infos-derniere-minute p {
-      font-size: 1em;
-      line-height: 1.6;
-    }
-      */
 
       /* FORMULAIRE PRISE DE RENDEZ-VOUS */
 .form-rdv {
@@ -357,8 +335,6 @@ body {
   }
 }
 
-  /* ... ton CSS existant ... */
-
   /* Décalage pour menu fixe sur ancres */
   .anchor-offset {
     display: block;
@@ -366,20 +342,37 @@ body {
     top: -60px; /* hauteur du menu fixe */
     visibility: hidden; /* invisible */
   }
+/* INFOS IMAGE */
+.infos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  text-align: center;
+  max-width: 250px;   /* limite identique à voiture1 */
+  margin-left: auto;
+  margin-right: auto;  /* centre le bloc */
+}
 
+.infos img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
   </style>
 
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
  
 <!-- MENU FIXE AU-DESSUS DU LOGO -->
   <nav id="menu-bandeau">
+    <a href="#infos">Infos de dernière minute</a>
     <a href="#horaires">Horaires</a>
     <a href="#contacts">Contacts</a>
     <a href="#tarifs">Tarifs</a>
     <a href="#vehicules">Nos véhicules</a>
     <a href="#equipe">L'équipe</a>
     <a href="#avis">Avis</a>
-    <a href="#Statistiques">Statistiques</a>
+    <!--<a href="#Statistiques">Statistiques</a>-->
     <a href="#rendez-vous">Rendez-vous</a>
     <a href="#faq">FAQ</a>
   </nav>
@@ -393,19 +386,25 @@ body {
   <!-- LOGOS, LABEL QUALITÉ ET AFFILIATION EN HAUT -->
   <section id="logos-affiliation">
     <div class="logos-affiliation">
-      <img src="affiliation.jpg" alt="Autre logo">
+      <img src="affiliation.jpg" alt="Code Rousseau">
       <img src="label-qualite.jpg" alt="École de conduite qualité">
       <img src="permis-1e.jpg" alt="Affiliation">
     </div>
   </section>
 
-  <!-- INFOS DE DERNIERE MINUTE -->
-  <section id="infos-derniere-minute">
-    <!-- Exemple avec texte et image
-   <img src="info-derniere.jpg" alt="Information importante">
-    <p>Aucune information de derniere minute pour le moment ! </p>
-  </section>-->
 
+  <!-- Infos de dernière minute -->
+  <section id="infos">
+  <span class="anchor-offset" id="infos"></span>
+  <h2>Infos de dernière minute</h2>
+  <div class="infos">
+    <img src="infos.jpg" alt="Infos de dernière minute">
+  </div>
+  <ul style="text-align:center;">
+    <li>Merci de tenir compte de ces informations !</li>
+  </ul>
+</section>
+  
   <!-- HORAIRES D'OUVERTURE -->
   <section id="horaires">
     <span class="anchor-offset" id="horaires"></span>
@@ -424,11 +423,11 @@ body {
   <!-- CONTACTS -->
   <section id="contacts">
     <h2>Contacts</h2>
-    <p style="text-align:center;">Téléphone fix : 03 22 53 93 60</p>
-    <p style="text-align:center;">Téléphone portable : 06 07 57 75 33</p>
-    <p style="text-align:center;">Email : autoecolelongueau@free.fr</p>
-    <p style="text-align:center;">Adresse : 115 Avenue Henri Barbusse, 80330 Longueau</p>
-    <p style="text-align:center;">Facebook : <a href="https://www.facebook.com/profile.php?id=100054197694817&locale=fr_FR" style="color:#00bfff; text-decoration:underline;" target="_blank">Auto-École de Longueau</a></p>
+    <p style="text-align:center;"><b>Téléphone fix :</b> 03 22 53 93 60</p>
+    <p style="text-align:center;"><b>Téléphone portable :</b> 06 07 57 75 33</p>
+    <p style="text-align:center;"><b>Email :</b> autoecoledelongueau@free.fr</p>
+    <p style="text-align:center;"><b>Adresse :</b> 115 Avenue Henri Barbusse, 80330 Longueau</p>
+    <p style="text-align:center;"><b>Facebook :</b> <a href="https://www.facebook.com/profile.php?id=100054197694817&locale=fr_FR" style="color:#00bfff; text-decoration:underline;" target="_blank">Auto-École de Longueau</a></p>
   </section>
 
   <!-- TARIFS -->
@@ -538,14 +537,14 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
   <section id="avis-google" style="text-align:center; margin-bottom:50px;">
     <img src="avis-google.jpg" alt="Avis Google : 4,9 * sur 178 avis" style="width:250px; height:auto;">
   </section>
-<!--STATISTIQUES-->
+<!--STATISTIQUES
 <section id="Statistiques" style="margin-bottom:20px;">
   <h2 style="text-align:center;">Statistiques</h2><br>
   <br><br><br><img src="graphique.jpg" alt="graphique" style="width:80%; max-width:400px; height:auto; display:block; margin: 0 auto;">
   <br><br><p style="text-align:center; font-weight:bold; margin-top:10px;">
     SOIT PLUS DE 98% DE RÉUSSITE SUR 5 ANS
   </p>
-</section>
+</section>-->
 <!-- PRISE DE RENDEZ-VOUS -->
 <section id="rendez-vous">
   <h2>Prise de rendez-vous</h2>
@@ -584,7 +583,6 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
       <option value="AAC - Boîte automatique">AAC - Boîte automatique</option>
       <option value="Formule théorique">Formule théorique</option>
       <option value="Formation passerelle (automatique -> manuelle)">Formation passerelle (automatique -> manuelle)</option>
-      <option value="Évaluation (hors forfait)">Évaluation (hors forfait)</option>
     </select>
 
     <label for="Objet">Informations supplémentaires :</label>
@@ -670,6 +668,75 @@ Deux monitrices toujours très souriantes, dynamiques et dans la bonne humeur."<
   <div class="faq-answer">
     <p>Respirez profondément, restez concentré sur votre conduite, écoutez attentivement l’examinateur et rappelez-vous que vous êtes préparé. Une bonne nuit de sommeil et un petit déjeuner équilibré aident aussi à être détendu.</p>
   </div>
+  <button class="faq-question">14. Quelle est la différence entre la boîte manuelle et la boîte automatique ?</button>
+  <div class="faq-answer">
+    <p>La boîte manuelle nécessite de gérer l’embrayage et le passage des vitesses, tandis que la boîte automatique simplifie la conduite en supprimant ces actions. Elle est idéale pour les élèves stressés ou souhaitant un apprentissage plus rapide.</p>
+  </div>
+   <button class="faq-question">15. Puis-je passer du permis automatique (B78) au permis boîte manuelle ?</button>
+  <div class="faq-answer">
+    <p>Oui. Après l’obtention du permis automatique, une formation complémentaire de 7 heures que l'on appelle une passerelle permet de conduire une boîte manuelle, sans repasser l’examen.</p>
+  </div>
+   <button class="faq-question">16. Proposez-vous la conduite supervisée après un échec à l’examen ?</button>
+  <div class="faq-answer">
+    <p>Oui. La conduite supervisée est une excellente solution pour continuer à s’entraîner, gagner en confiance et améliorer ses chances de réussite lors du prochain passage.</p>
+  </div>
+   <button class="faq-question">17. Est-il possible de faire un réentraînement après une longue période sans conduire ?</button>
+  <div class="faq-answer">
+    <p>Absolument. Le réentraînement permet de reprendre la conduite en douceur, de corriger les mauvaises habitudes et de retrouver assurance et sécurité au volant.</p>
+  </div>
+   <button class="faq-question">18. La conduite accompagnée permet-elle d’augmenter les chances de réussite au permis ?</button>
+  <div class="faq-answer">
+    <p>Oui. Les statistiques montrent que la conduite accompagnée améliore le taux de réussite à l’examen et permet une meilleure maîtrise de la conduite sur le long terme.</p>
+  </div>
+   <button class="faq-question">19. Combien d’heures de conduite sont obligatoires pour passer l’examen ?</button>
+  <div class="faq-answer">
+    <p>Le minimum légal est de 20 heures en boîte manuelle et 13 heures en boîte automatique. Toutefois, le nombre d’heures dépend du rythme et de la progression de chaque élève.</p>
+  </div>
+  <button class="faq-question">20. À quelle fréquence puis-je prendre des leçons de conduite ?</button>
+  <div class="faq-answer">
+    <p>Les leçons peuvent être planifiées selon vos disponibilités, avec une fréquence régulière pour assurer une progression efficace.</p>
+  </div>
+  <button class="faq-question">21. Quels sont les moyens de paiement acceptés ?</button>
+  <div class="faq-answer">
+    <p>Nous acceptons plusieurs moyens de paiement et proposons des facilités afin de rendre la formation accessible au plus grand nombre.</p>
+  </div>
+  <button class="faq-question">22. Le permis à 1 € par jour est-il accessible à tous ?</button>
+  <div class="faq-answer">
+    <p>Il est destiné aux jeunes de 15 à 25 ans sous conditions d’éligibilité. Nous vous accompagnons dans les démarches si vous êtes concerné.</p>
+  </div>
+  <button class="faq-question">23. L’auto-école s’occupe-t-elle des démarches administratives ANTS ?</button>
+  <div class="faq-answer">
+    <p>Oui. Nous prenons en charge l’ensemble des démarches administratives pour vous simplifier la vie.</p>
+  </div>
+  <button class="faq-question">24. Combien de temps le code est-il valable ?</button>
+  <div class="faq-answer">
+    <p>Le code de la route est valable 5 ans à compter de sa réussite.</p>
+  </div>
+  <button class="faq-question">25. Puis-je transférer mon dossier depuis une autre auto-école ?</button>
+  <div class="faq-answer">
+    <p>Oui. Le transfert de dossier est possible et nous vous accompagnons dans cette démarche.</p>
+  </div>
+   <button class="faq-question">26. Puis-je transférer mon dossier depuis une autre auto-école ?</button>
+  <div class="faq-answer">
+    <p>Oui. Le transfert de dossier est possible et nous vous accompagnons dans cette démarche.</p>
+  </div>
+   <button class="faq-question">27. Aidez-vous les élèves stressés ou en manque de confiance ?</button>
+  <div class="faq-answer">
+    <p>Oui. Nous adaptons notre pédagogie à chaque élève, avec patience, écoute et bienveillance.</p>
+  </div>
+   <button class="faq-question">28. Que faire si j’ai peur de conduire ?</button>
+  <div class="faq-answer">
+    <p>La peur est fréquente. Grâce à un accompagnement progressif et personnalisé, nous vous aidons à reprendre confiance étape par étape.</p>
+  </div>
+   <button class="faq-question">29. Quel est votre taux de réussite au permis ?</button>
+  <div class="faq-answer">
+    <p>Notre taux de réussite est satisfaisant et reflète la qualité de notre accompagnement et l’implication de nos élèves.</p>
+  </div>
+   <button class="faq-question">30. Pourquoi choisir votre auto-école plutôt qu’une autre ?</button>
+  <div class="faq-answer">
+    <p>Pour notre pédagogie personnalisée, notre écoute, notre sérieux et notre objectif principal : votre réussite et votre sécurité sur la route.</p>
+  </div>
+
 </section>
 </main>
 
