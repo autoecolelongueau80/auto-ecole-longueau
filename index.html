@@ -119,7 +119,7 @@
     .avis-stars-sm{display:flex;gap:3px;margin-bottom:14px}
     .avis-stars-sm span{color:#f59e0b;font-size:15px}
     .avis-text{font-size:14px;color:var(--text-mid);line-height:1.7;font-style:italic;position:relative;z-index:1}
-    .avis-google-img{display:block;margin:0 auto;height:100px;width:auto}
+    .avis-google-img{display:block;margin:0 auto;max-width:100%;height:auto;width:250px}
 
     /* RDV */
     .rdv-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
@@ -248,7 +248,7 @@
       </div>
       <div class="contact-card">
         <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div><div class="contact-label">Email</div><div class="contact-value">autoecoledelongueau@free.fr</div></div>
+        <div><div class="contact-label">Email</div><div class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="422337362d27212d2e2726272e2d2c253727233702243027276c2430">[email&#160;protected]</a></div></div>
       </div>
       <div class="contact-card">
         <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
@@ -620,9 +620,4 @@
 
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script>
-window.onscroll=function(){var b=document.getElementById('backToTop');b.className=window.scrollY>400?'show':''};
-</script>
-
-</body>
-</html>
+<script data-cfasyn
