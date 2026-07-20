@@ -6,7 +6,11 @@
   <title>Auto-École de Longueau | Permis B, AAC, Boîte auto, manuelle</title>
   <link rel="icon" href="favicon.jpg" type="image/png">
   <script src="https://kit.fontawesome.com/0b1c9b6f5f.js" crossorigin="anonymous"></script>
-
+<!-- ===== EMAILJS SDK ===== -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
+</script>
   <!-- ===== FIREBASE SDK ===== -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -748,10 +752,10 @@
   <section id="rendez-vous">
     <h2>Prise de rendez-vous</h2>
     <p style="text-align:center; margin-bottom:20px;">Pour toute demande d'inscription, d'évaluation de départ ou de renseignements complémentaires, merci de remplir le formulaire ci-dessous.</p>
-    <form action="https://formspree.io/f/meelvaql" method="POST" class="form-rdv">
+<form id="form-rdv" class="form-rdv" onsubmit="return sendRdvForm(event)">
       <label for="Nom">Nom :</label>
       <input type="text" id="Nom" name="Nom" placeholder="Nom" required>
-      <label for="Prenom">Prénom :</label>
+      <label for="Prenom">Prenom :</label>
       <input type="text" id="Prenom" name="Prénom" placeholder="Prénom" required>
       <label for="Email">Adresse email :</label>
       <input type="email" id="Email" name="Email" placeholder="Adresse email" required>
@@ -774,7 +778,8 @@
       </select>
       <label for="Objet">Informations supplémentaires :</label>
       <textarea id="Objet" name="Objet" rows="3" placeholder="Informations supplémentaires (si nécessaire)"></textarea>
-      <button type="submit">Envoyer la demande</button>
+      <button type="submit" id="rdv-submit-btn">Envoyer la demande</button>
+<p id="rdv-status" style="text-align:center; margin-top:15px; display:none;"></p>
     </form>
     <p style="text-align:center; margin-top:20px;">Nous vous recontacterons rapidement pour fixer un rendez-vous.</p>
   </section>
@@ -795,6 +800,57 @@
 <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑</button>
 
 <script>
+  // ============================================
+// ENVOI FORMULAIRE RDV — EMAILJS
+// ============================================
+function sendRdvForm(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('form-rdv');
+  const btn = document.getElementById('rdv-submit-btn');
+  const status = document.getElementById('rdv-status');
+
+  const params = {
+    Nom: document.getElementById('Nom').value,
+    Prenom: document.getElementById('Prenom').value,
+    Email: document.getElementById('Email').value,
+    Telephone: document.getElementById('Telephone').value,
+    CodePostal: document.getElementById('CodePostal').value,
+    Formation: document.getElementById('Formation').value,
+    Objet: document.getElementById('Objet').value,
+  };
+
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours...';
+  status.style.display = 'none';
+
+  const SERVICE_ID = 'testael';
+  const TEMPLATE_NOTIF_ADMIN = 'template_1cilhvk';
+  const TEMPLATE_CONFIRMATION = 'template_i2r4icw';
+
+  Promise.all([
+    emailjs.send(SERVICE_ID, TEMPLATE_NOTIF_ADMIN, params),
+    emailjs.send(SERVICE_ID, TEMPLATE_CONFIRMATION, params)
+  ])
+    .then(() => {
+      status.textContent = '✅ Votre demande a bien été envoyée. Un email de confirmation vous a été envoyé.';
+      status.style.color = 'green';
+      status.style.display = 'block';
+      form.reset();
+    })
+    .catch((err) => {
+      console.error('Erreur EmailJS :', err);
+      status.textContent = '❌ Une erreur est survenue. Merci de réessayer ou de nous appeler directement.';
+      status.style.color = 'red';
+      status.style.display = 'block';
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer la demande';
+    });
+
+  return false;
+}
 // ============================================
 // DONNÉES PAR DÉFAUT
 // ============================================
